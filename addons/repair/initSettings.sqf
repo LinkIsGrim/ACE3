@@ -35,6 +35,33 @@
 ] call CBA_settings_fnc_init;
 
 [
+    QGVAR(repairDistanceCoef), "SLIDER",
+    [LSTRING(repairDistanceCoef_name), LSTRING(repairDistanceCoef_description)],
+    [localize ELSTRING(OptionsMenu,CategoryLogistics), localize "str_state_repair"],
+    [0.25,2,1,2], // [min, max, default value, trailing decimals (-1 for whole numbers only)]
+    true, // isGlobal
+    {[QGVAR(repairDistanceCoef), _this] call EFUNC(common,cbaSettings_settingChanged)}
+] call CBA_settings_fnc_init;
+
+[
+    QGVAR(repairTimeCoef), "SLIDER",
+    [LSTRING(repairTimeCoef_name), LSTRING(repairTimeCoef_description)],
+    [localize ELSTRING(OptionsMenu,CategoryLogistics), localize "str_state_repair"],
+    [0.25,5,1,1], // [min, max, default value, trailing decimals (-1 for whole numbers only)]
+    true, // isGlobal
+    {[QGVAR(repairTimeCoef), _this] call EFUNC(common,cbaSettings_settingChanged)}
+] call CBA_settings_fnc_init;
+
+[
+    QGVAR(fullRepairTime), "SLIDER",
+    [LSTRING(fullRepairTime_name), LSTRING(fullRepairTime_description)],
+    [localize ELSTRING(OptionsMenu,CategoryLogistics), localize "str_state_repair"],
+    [1,300,30,-1], // [min, max, default value, trailing decimals (-1 for whole numbers only)]
+    true, // isGlobal
+    {[QGVAR(fullrepairTime), _this] call EFUNC(common,cbaSettings_settingChanged)}
+] call CBA_settings_fnc_init;
+
+[
     QGVAR(repairDamageThreshold_engineer), "SLIDER",
     [LSTRING(repairDamageThreshold_Engineer_name), LSTRING(repairDamageThreshold_Engineer_description)],
     [localize ELSTRING(OptionsMenu,CategoryLogistics), localize "str_state_repair"],
@@ -114,4 +141,12 @@
     false, // default value
     true, // isGlobal
     {[QGVAR(autoShutOffEngineWhenStartingRepair), _this] call EFUNC(common,cbaSettings_settingChanged)}
+] call CBA_settings_fnc_init;
+
+[
+    QGVAR(showExtraHitpoints), "CHECKBOX",
+    [LSTRING(showExtraHitpoints_name), LSTRING(showExtraHitpoints_description)],
+    [localize ELSTRING(OptionsMenu,CategoryLogistics), localize "str_state_repair"],
+    false, // default value
+    false // isGlobal
 ] call CBA_settings_fnc_init;

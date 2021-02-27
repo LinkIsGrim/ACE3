@@ -16,14 +16,19 @@
  * Public: No
  */
 
-#define DAMAGE_SCALING_FACTOR 5
+#define DAMAGE_SCALING_FACTOR 4
 
 params ["", "_patient"];
 
 private _bodyPartDamage = 0;
+private _bloodVolume = _patient getVariable [QEGVAR(medical,bloodVolume), 6];
 
 {
     _bodyPartDamage = _bodyPartDamage + _x;
 } forEach (_patient getVariable [QEGVAR(medical,bodyPartDamage), []]);
 
-10 max (((_bodyPartDamage * DAMAGE_SCALING_FACTOR) min 180) * GVAR(timeCoefficientPAK))
+private _fractures = {_x isEqualTo 1} count (_patient getVariable ["ace_medical_fractures",[0,0,0,0,0,0]]);
+
+private _pain = _patient getVariable ["ace_medical_fractures", 0];
+
+10 max (((_bodyPartDamage * DAMAGE_SCALING_FACTOR * (3 - (linearConversion [0.5, 1, _bloodVolume / 6, 0, 2])) + (_fractures * 5) + (_pain * 10)) min 180) * GVAR(timeCoefficientPAK))
