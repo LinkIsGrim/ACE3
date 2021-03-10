@@ -43,7 +43,7 @@ private _hitpointPositions = getArray (_vehCfg >> QGVAR(hitpointPositions));
 // Associated hitpoints can be grouped via config to produce a single repair action
 private _hitpointGroups = getArray (_vehCfg >> QGVAR(hitpointGroups));
 // Get turret paths
-private _turretPaths = ((fullCrew [_vehicle, "gunner", true]) + (fullCrew [_vehicle, "commander", true])) apply {_x # 3};
+private _turretPaths = ((fullCrew [_vehicle, "gunner", true]) + (fullCrew [_vehicle, "commander", true])) apply {_x select 3};
 
 {
     private _selection = _x;
@@ -61,28 +61,33 @@ private _turretPaths = ((fullCrew [_vehicle, "gunner", true]) + (fullCrew [_vehi
         private _text = localize LSTRING(RemoveWheel);
         private _condition = {[_this select 1, _this select 0, _this select 2 select 0, "RemoveWheel"] call DFUNC(canRepair)};
         private _statement = {[_this select 1, _this select 0, _this select 2 select 0, "RemoveWheel"] call DFUNC(repair)};
-        private _action = [_name, _text, _icon, _statement, _condition, {}, [_hitpoint], _position, 2, nil, FUNC(modifySelectionInteraction)] call EFUNC(interact_menu,createAction);
+        private _action = [_name, _text, _icon, _statement, _condition, {}, [_hitpoint], _position, (2.2 * GVAR(repairDistanceCoef)), nil, FUNC(modifySelectionInteraction)] call EFUNC(interact_menu,createAction);
         [_type, 0, [], _action] call EFUNC(interact_menu,addActionToClass);
+
+        private _position = compile format ["_pos = _target selectionPosition ['%1', 'HitPoints']; _pos set [1, (_pos select 1) - 0.1]; _pos set [2, (_pos select 2) - 0.1]; _pos", _selection]; //Holy jank.
 
         // An action to replace the wheel is required
         _name = format ["Replace_%1_%2", _forEachIndex, _hitpoint];
         _text = localize LSTRING(ReplaceWheel);
         _condition = {[_this select 1, _this select 0, _this select 2 select 0, "ReplaceWheel"] call DFUNC(canRepair)};
         _statement = {[_this select 1, _this select 0, _this select 2 select 0, "ReplaceWheel"] call DFUNC(repair)};
-        _action = [_name, _text, _icon, _statement, _condition, {}, [_hitpoint], _position, 2] call EFUNC(interact_menu,createAction);
+        _action = [_name, _text, _icon, _statement, _condition, {}, [_hitpoint], _position, (2.2 * GVAR(repairDistanceCoef))] call EFUNC(interact_menu,createAction);
         [_type, 0, [], _action] call EFUNC(interact_menu,addActionToClass);
 
         _processedSelections pushBack _selection;
     } else {
         // Empty hitpoints don't contain enough information
         if (_hitpoint isEqualTo "") exitWith { TRACE_3("Skipping Empty Hit",_hitpoint,_forEachIndex,_selection); };
+        //Edited: Show interactions for ERA and other bullshit.
+
         // Ignore glass hitpoints
-        if ((_hitpoint find "glass") != -1) exitWith { TRACE_3("Skipping Glass",_hitpoint,_forEachIndex,_selection); };
+        if ((_hitpoint find "glass") != -1 && {!GVAR(showExtraHitpoints)}) exitWith { TRACE_3("Skipping Glass",_hitpoint,_forEachIndex,_selection); };
         // Ignore hitpoints starting with # (seems to be lights)
-        if ((_hitpoint select [0,1]) == "#") exitWith { TRACE_3("Skipping # hit",_hitpoint,_forEachIndex,_selection); };
+        if ((_hitpoint select [0,1]) == "#" && {!GVAR(showExtraHitpoints)}) exitWith { TRACE_3("Skipping # hit",_hitpoint,_forEachIndex,_selection); };
         // Ignore ERA/Slat armor (vanilla uses hitera_/hitslat_, pre-1.82 RHS uses era_)
         // ToDo: see how community utilizes new armor system, could also check getText (_hitpointConfig >> "simulation")
-        if (((_hitpoint select [0,7]) == "hitera_") || {(_hitpoint select [0,8]) == "hitslat_"} || {(_hitpoint select [0,4]) == "era_"}) exitWith { TRACE_3("Skipping ERA/SLAT",_hitpoint,_forEachIndex,_selection); };
+        if ((((_hitpoint select [0,7]) == "hitera_") || {(_hitpoint select [0,8]) == "hitslat_"} || {(_hitpoint select [0,4]) == "era_"}) && {!GVAR(showExtraHitpoints)}) exitWith { TRACE_3("Skipping ERA/SLAT",_hitpoint,_forEachIndex,_selection); };
+
 
         // Some hitpoints do not have a selection but do have an armorComponent value (seems to mainly be RHS)
         // Ref https://community.bistudio.com/wiki/Arma_3_Damage_Enhancement
@@ -95,8 +100,8 @@ private _turretPaths = ((fullCrew [_vehicle, "gunner", true]) + (fullCrew [_vehi
                 if (_hitpointsCfg isNotEqualTo []) exitWith {
                     TRACE_2("turret hitpoint configFound",_hitpoint,_x);
                      // only do turret hitpoints for now or we get some weird stuff
-                    if ((_hitpoint in ["hitturret", "hitgun"]) || {(getNumber (_hitpointsCfg # 0 >> "isGun")) == 1} || {(getNumber (_hitpointsCfg # 0 >> "isTurret")) == 1}) then {
-                        _armorComponent = getText (_hitpointsCfg # 0 >> "armorComponent");
+                    if ((_hitpoint in ["hitturret", "hitgun"]) || {(getNumber (_hitpointsCfg select 0 >> "isGun")) == 1} || {(getNumber (_hitpointsCfg select 0 >> "isTurret")) == 1}) then {
+                        _armorComponent = getText (_hitpointsCfg select 0 >> "armorComponent");
                     };
                 };
             } forEach _turretPaths;
@@ -164,13 +169,13 @@ private _turretPaths = ((fullCrew [_vehicle, "gunner", true]) + (fullCrew [_vehi
             TRACE_4("Adding RepairTrack",_hitpoint,_forEachIndex,_selection,_text);
             private _condition = {[_this select 1, _this select 0, _this select 2 select 0, "RepairTrack"] call DFUNC(canRepair)};
             private _statement = {[_this select 1, _this select 0, _this select 2 select 0, "RepairTrack"] call DFUNC(repair)};
-            private _action = [_name, _text, _icon, _statement, _condition, {}, [_hitpoint], _position, 4] call EFUNC(interact_menu,createAction);
+            private _action = [_name, _text, _icon, _statement, _condition, {}, [_hitpoint], _position, (4 * GVAR(repairDistanceCoef))] call EFUNC(interact_menu,createAction);
             [_type, 0, [], _action] call EFUNC(interact_menu,addActionToClass);
         } else {
             TRACE_4("Adding MiscRepair",_hitpoint,_forEachIndex,_selection,_text);
             private _condition = {[_this select 1, _this select 0, _this select 2 select 0, "MiscRepair"] call DFUNC(canRepair)};
             private _statement = {[_this select 1, _this select 0, _this select 2 select 0, "MiscRepair"] call DFUNC(repair)};
-            private _action = [_name, _text, _icon, _statement, _condition, {}, [_forEachIndex], _position, 5] call EFUNC(interact_menu,createAction);
+            private _action = [_name, _text, _icon, _statement, _condition, {}, [_forEachIndex], _position, (5 * GVAR(repairDistanceCoef))] call EFUNC(interact_menu,createAction);
             // Put inside main actions if no other position was found above
             if (_position isEqualTo [0,0,0]) then {
                 [_type, 0, ["ACE_MainActions", QGVAR(Repair)], _action] call EFUNC(interact_menu,addActionToClass);
@@ -185,7 +190,7 @@ private _turretPaths = ((fullCrew [_vehicle, "gunner", true]) + (fullCrew [_vehi
 
 private _condition = {[_this select 1, _this select 0, "", "fullRepair"] call DFUNC(canRepair)};
 private _statement = {[_this select 1, _this select 0, "", "fullRepair"] call DFUNC(repair)};
-private _action = [QGVAR(fullRepair), localize LSTRING(fullRepair), _icon, _statement, _condition, {}, [], "", 4] call EFUNC(interact_menu,createAction);
+private _action = [QGVAR(fullRepair), localize LSTRING(fullRepair), _icon, _statement, _condition, {}, [], "", (4 * GVAR(repairDistanceCoef))] call EFUNC(interact_menu,createAction);
 [_type, 0, ["ACE_MainActions", QGVAR(Repair)], _action] call EFUNC(interact_menu,addActionToClass);
 
 // set class as initialized
