@@ -33,6 +33,6 @@ private _pain = _patient getVariable ["ace_medical_pain", 0];
 
 private _time = ((_fractures * 5) + (_pain * 10) + (_bodyPartDamage * DAMAGE_SCALING_FACTOR));
 
-private _coef = (3 - (linearConversion [0.5, 1, _bloodVolume / 6, 0, 2]));
+private _coef = (2 - (linearConversion [0.5, 1, _bloodVolume / 6, 0, 1]));
 
 10 max (((_time * _coef) min 180) * GVAR(timeCoefficientPAK))
