@@ -256,7 +256,7 @@ class ACE_Medical_Injuries {
             thresholds[] = {{0.1, 1}, {0.1, 0}};
             selectionSpecific = 1;
             class Abrasion {
-                weighting[] = {{0.30, 0}, {0.30, 1}};
+                weighting[] = {{0.30, 1}};
             };
         };
         class drowning {
@@ -265,7 +265,8 @@ class ACE_Medical_Injuries {
             woundsHandler = "{}";
         };
         class burning {
-            //TODO: burning damage used to be type 'unknown' so this is a copy-paste of that
+            //burning damage used to be type 'unknown' so this is a copy-paste of that
+            //TODO: proper burn wound
             thresholds[] = {{0.1, 1}, {0.1, 0}};
             selectionSpecific = 0;
             woundsHandler = QFUNC(woundsHandlerBurning);
