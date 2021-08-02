@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /*
- * Author: BaerMitUmlaut
+ * Author: BaerMitUmlaut, GhostIsSpooky
  * Handles the unconscious state
  *
  * Arguments:
@@ -26,6 +26,7 @@ if (!alive _unit || {!local _unit}) exitWith {};
 if (EGVAR(medical,spontaneousWakeUpChance) > 0) then {
     if (_unit call EFUNC(medical_status,hasStableVitals)) then {
         private _lastWakeUpCheck = _unit getVariable QEGVAR(medical,lastWakeUpCheck);
+        private _bloodVolume = _unit getVariable [QEGVAR(medical,bloodVolume), 6];
 
         // Handle setting being changed mid-mission and still properly check
         // already unconscious units, should handle locality changes as well
@@ -34,10 +35,10 @@ if (EGVAR(medical,spontaneousWakeUpChance) > 0) then {
             _unit setVariable [QEGVAR(medical,lastWakeUpCheck), CBA_missionTime];
         };
 
-        private _wakeUpCheckInterval = SPONTANEOUS_WAKE_UP_INTERVAL;
+        private _wakeUpCheckInterval = ace_medical_const_WakeUpInterval;
         if (EGVAR(medical,spontaneousWakeUpEpinephrineBoost) > 1) then {
             private _epiEffectiveness = [_unit, "Epinephrine", false] call EFUNC(medical_status,getMedicationCount);
-            _wakeUpCheckInterval = _wakeUpCheckInterval * linearConversion [0, 1, _epiEffectiveness, 1, 1 / EGVAR(medical,spontaneousWakeUpEpinephrineBoost), true];
+            _wakeUpCheckInterval = (_wakeUpCheckInterval * linearConversion [0.7, 1, _bloodVolume / 6, 1, 1 / 6, true] * linearConversion [0, 1, _epiEffectiveness, 1, 1 / EGVAR(medical,spontaneousWakeUpEpinephrineBoost), true]) max 6.8;
             TRACE_2("epiBoost",_epiEffectiveness,_wakeUpCheckInterval);
         };
         if (CBA_missionTime - _lastWakeUpCheck > _wakeUpCheckInterval) then {

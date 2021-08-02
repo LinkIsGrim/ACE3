@@ -181,6 +181,9 @@
             <Chinese>履帶更換完畢</Chinese>
             <Turkish>Parça Değişti</Turkish>
         </Key>
+        <Key ID="STR_ACE_Repair_RepairedTrack">
+            <English>Track repaired</English>
+        </Key>
         <Key ID="STR_ACE_Repair_RemoveTrack">
             <English>Remove Track</English>
             <German>Entferne Kette</German>
@@ -1284,6 +1287,24 @@
             <Chinesesimp>工具包可以修复的最大损坏值?</Chinesesimp>
             <Chinese>工具包可以修復的最大損壞值?</Chinese>
         </Key>
+        <Key ID="STR_ACE_Repair_repairDistanceCoef_name">
+            <English>Repair Distance Coefficient</English>
+        </Key>
+        <Key ID="STR_ACE_Repair_repairDistanceCoef_description">
+            <English>Controls from how far away repair interactions are shown. Default: 1 (4-5m)</English>
+        </Key>
+        <Key ID="STR_ACE_Repair_repairTimeCoef_name">
+            <English>Repair Time Coefficient</English>
+        </Key>
+        <Key ID="STR_ACE_Repair_repairTimeCoef_description">
+            <English>Controls how long it takes to perform a repair action. Default: 1 (10-15 seconds)</English>
+        </Key>
+        <Key ID="STR_ACE_Repair_fullRepairTime_name">
+            <English>Full Repair Time</English>
+        </Key>
+        <Key ID="STR_ACE_Repair_fullrepairTime_description">
+            <English>Time in seconds needed to complete a Full Repair action. Default: 30</English>
+        </Key>
         <Key ID="STR_ACE_Repair_repairDamageThreshold_Engineer_name">
             <English>Repair Threshold (Engineer)</English>
             <German>Reparaturlimit (Pionier)</German>
@@ -1299,6 +1320,7 @@
             <Chinesesimp>维修门槛 (工兵)</Chinesesimp>
             <Chinese>維修門檻 (工兵)</Chinese>
         </Key>
+
         <Key ID="STR_ACE_Repair_repairDamageThreshold_Engineer_description">
             <English>What is the maximum damage that can be repaired by an engineer?</English>
             <German>Der maximale Schaden, der von einem Pionier behoben werden kann?</German>
@@ -2024,6 +2046,12 @@
             <French>Coupe automatiquement le moteur lorsque des réparations sont effectuées.</French>
             <Czech>Automaticky vypne motor při zahájení oprav.</Czech>
             <Spanish>Apagar el motor automáticamente al efectuar una reparación</Spanish>
+        </Key>
+        <Key ID="STR_ACE_Repair_showExtraHitpoints_name">
+            <English>Show Extra Hitpoints</English>
+        </Key>
+        <Key ID="STR_ACE_Repair_showExtraHitpoints_description">
+            <English>Show additional interactions for misc hitpoints when repairing.</English>
         </Key>
     </Package>
 </Project>
