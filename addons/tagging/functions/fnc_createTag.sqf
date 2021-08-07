@@ -17,7 +17,7 @@
  * Example:
  * [positionASL, vectorDirAndUp, "z\ace\addons\tagging\UI\tags\black\0.paa", object] call ace_tagging_fnc_createTag
  *
- * Public: No
+ * Public: No//
  */
 
 params ["_tagPosASL", "_vectorDirAndUp", "_texture", "_object", "_unit", ["_material","",[""]], ["_tagModel", "UserTexture1m_F", [""]]];
