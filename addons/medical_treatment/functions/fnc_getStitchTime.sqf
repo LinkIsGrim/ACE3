@@ -18,12 +18,4 @@
 
 params ["", "_patient"];
 
-private _stitchableWounds = _patient call FUNC(getStitchableWounds);
-
-private _woundCount = 0;
-{
-    _x params ["_woundID", "_bodyPartN", "_amountOf"];
-    _woundCount = _woundCount + (ceil _amountOf);
-} forEach _stitchableWounds;
-
-_woundCount * GVAR(woundStitchTime)
+count (_patient call FUNC(getStitchableWounds)) * GVAR(woundStitchTime)

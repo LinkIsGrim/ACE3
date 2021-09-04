@@ -21,5 +21,4 @@ class CfgPatches {
 #include "CfgReplacementItems.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
-#include "CfgMagazines.hpp"
 #include "Cfg3DEN.hpp"
