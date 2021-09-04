@@ -25,7 +25,7 @@ _args params ["", "_patient"];
 private _stitchableWounds = _patient call FUNC(getStitchableWounds);
 
 // Stop treatment if there are no wounds that can be stitched remaining
-if (_stitchableWounds isEqualTo []) exitWith {false};
+if (_stitchableWounds isEqualTo []) exitWith {_patient setVariable [QEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]]; false};
 
 // Not enough time has elapsed to stitch a wound
 if (_totalTime - _elapsedTime > (count _stitchableWounds - 1) * GVAR(woundStitchTime)) exitWith {true};
