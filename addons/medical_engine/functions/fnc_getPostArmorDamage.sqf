@@ -46,7 +46,7 @@ params ["_unit", "_damage", "_hitpoint", "_ammo"];
 
 if (_ammo == "") exitWith {[_damage * _armor, _damage]}; // leave damage handling for weird stuff to handleDamage
 
-private _ammoEntry = _ammoEntry = GVAR(ammoCache) getOrDefault [_ammo, []];
+private _ammoEntry = GVAR(ammoCache) getOrDefault [_ammo, []];
 if (_ammoEntry isEqualTo []) then {
         private _cfgAmmo = configFile >> "CfgAmmo" >> _ammo;
     {
