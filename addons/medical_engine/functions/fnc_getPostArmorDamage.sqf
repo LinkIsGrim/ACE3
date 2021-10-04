@@ -46,6 +46,8 @@ params ["_unit", "_damage", "_hitpoint", "_ammo"];
 
 if (_ammo == "") exitWith {[_damage * _armor, _damage]}; // leave damage handling for weird stuff to handleDamage
 
+if (_armor == 0) exitWith {[_damage * 2, _damage * 2]}; // just deal double damage if there's no armor and leave it at that
+
 private _ammoEntry = GVAR(ammoCache) getOrDefault [_ammo, []];
 if (_ammoEntry isEqualTo []) then {
         private _cfgAmmo = configFile >> "CfgAmmo" >> _ammo;
@@ -63,7 +65,5 @@ if (_explosive > 0) then { // explosive damage should be treated as primarily fo
 private _penetration = (_caliber / REFERENCE_CALIBER) * (_hit / REFERENCE_HIT) * (_armor * _passThrough) / DAMAGE_SCALING_FACTOR;
 
 _damage = _damage * _penetration; // cap damage at double
-
-if (_armor == 0) exitWith {[_damage, _damage]};
 
 [_damage * _armor, _damage]
