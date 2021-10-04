@@ -32,16 +32,19 @@ private _gear = [
 
 private _rags = _gear joinString "$";
 private _var = format [QGVAR(armorCache$%1), _hitpoint];
-_unit getVariable [_var, [""]] params ["_prevRags", "_armor"];
+_unit getVariable [_var, [""]] params ["_prevRags", "_armor", "_passThrough"];
 
 if (_rags != _prevRags) then {
     _armor = 0;
+    _passThrough = 1;
 
     {
-        _armor = _armor + ([_x, _hitpoint] call FUNC(getItemArmor));
+        [_x, _hitpoint] call FUNC(getItemArmor) params ["_gearArmor", "_gearPassThrough"];
+        _armor = _armor + _gearArmor;
+        _passThrough = _passThrough * _gearPassThrough;
     } forEach _gear;
 
-    _unit setVariable [_var, [_rags, _armor]];
+    _unit setVariable [_var, [_rags, _armor, _passThrough]];
 };
 
-_armor // return
+[_armor, _passThrough] // return

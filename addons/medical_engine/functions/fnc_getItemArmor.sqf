@@ -11,42 +11,41 @@
  * Item armor for the given hitpoint <NUMBER>
  *
  * Example:
- * ["V_PlateCarrier_rgr", "HitChest"] call ace_medical_engine_fnc_getItemArmor
+ * ["V_PlateCarrier1_rgr", "HitBody"] call ace_medical_engine_fnc_getItemArmor
  *
  * Public: No
  */
 
 params ["_item", "_hitpoint"];
 
+if ("" in [_item, _hitpoint]) exitWith { // just exit with default values if empty
+    [0, 1]
+};
+
 private _key = format ["%1$%2", _item, _hitpoint];
-private _armor = GVAR(armorCache) get _key;
+private _entry = GVAR(armorCache) getOrDefault [_key, []];
+_entry params [["_armor", 0], ["_passThrough", 1]];
 
-if (isNil "_armor") then {
+if (_entry isEqualTo []) then {
     TRACE_2("Cache miss",_item,_hitpoint);
-    if ("" in [_item, _hitpoint]) exitWith {
-        _armor = 0;
-        GVAR(armorCache) set [_key, _armor];
-    };
-
     private _itemInfo = configFile >> "CfgWeapons" >> _item >> "ItemInfo";
 
     if (getNumber (_itemInfo >> "type") == TYPE_UNIFORM) then {
         private _unitCfg = configFile >> "CfgVehicles" >> getText (_itemInfo >> "uniformClass");
-        if (_hitpoint == "#structural") then {
-            // TODO: I'm not sure if this should be multiplied by the base armor value or not
-            _armor = getNumber (_unitCfg >> "armorStructural");
-        } else {
-            private _entry = _unitCfg >> "HitPoints" >> _hitpoint;
-            _armor = getNumber (_unitCfg >> "armor") * (1 max getNumber (_entry >> "armor"));
+        private _entry = _unitCfg >> "HitPoints" >> _hitpoint;
+        if !(isNull _entry) then {
+            _armor = getNumber (_unitCfg >> "armor") * getNumber (_entry >> "armor");
+            _passThrough = getNumber (_entry >> "passThrough");
         };
     } else {
         private _condition = format ["getText (_x >> 'hitpointName') == '%1'", _hitpoint];
         private _entry = configProperties [_itemInfo >> "HitpointsProtectionInfo", _condition] param [0, configNull];
-
-        _armor = getNumber (_entry >> "armor");
+        if !(isNull _entry) then {
+            _armor = getNumber (_entry >> "armor");
+            _passThrough = getNumber (_entry >> "passThrough");
+        };
     };
-
-    GVAR(armorCache) set [_key, _armor];
+    GVAR(armorCache) set [_key, [_armor, _passThrough]];
 };
 
-_armor // return
+[_armor, _passThrough] // return

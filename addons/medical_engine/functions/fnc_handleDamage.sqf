@@ -35,10 +35,11 @@ if (_hitPoint isEqualTo "") then {
 if !(isDamageAllowed _unit && {_unit getVariable [QEGVAR(medical,allowDamage), true]}) exitWith {_oldDamage};
 
 private _newDamage = _damage - _oldDamage;
-// Get armor value of hitpoint and calculate damage before armor
-private _armor = [_unit, _hitpoint] call FUNC(getHitpointArmor);
-private _realDamage = _newDamage * _armor;
-TRACE_4("Received hit",_hitpoint,_ammo,_newDamage,_realDamage);
+([_unit, _newDamage, _hitpoint, _ammo] call FUNC(getPostArmorDamage)) params ["_realDamage", "_postArmorDamage"];
+// Get post armor damage
+// Damages are stored for "ace_hdbracket" event triggered last
+_unit setVariable [format [QGVAR($%1), _hitPoint], [_realDamage, _postArmorDamage]];
+TRACE_3("Received hit",_hitpoint,_postArmorDamage,_realDamage);
 
 // Drowning doesn't fire the EH for each hitpoint so the "ace_hdbracket" code never runs
 // Damage occurs in consistent increments
@@ -119,7 +120,7 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
 
     _allDamages sort false;
     _allDamages = _allDamages apply {[_x select 1, _x select 3, _x select 0]};
-    
+
     // Environmental damage sources all have empty ammo string
     // No explicit source given, we infer from differences between them
     if (_ammo isEqualTo "") then {
@@ -168,8 +169,36 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
     0
 };
 
-// Damages are stored for "ace_hdbracket" event triggered last
-_unit setVariable [format [QGVAR($%1), _hitPoint], [_realDamage, _newDamage]];
+// Drowning doesn't fire the EH for each hitpoint so the "ace_hdbracket" code never runs
+// Damage occurs in consistent increments
+if (
+    _hitPoint isEqualTo "#structural" &&
+    {getOxygenRemaining _unit <= 0.5} &&
+    {_damage isEqualTo (_oldDamage + 0.005)}
+) exitWith {
+    [QEGVAR(medical,woundReceived), [_unit, "Body", _newDamage, _unit, "drowning", [HITPOINT_INDEX_BODY, 1]]] call CBA_fnc_localEvent;
+    TRACE_5("Drowning",_unit,_shooter,_instigator,_damage,_newDamage);
+
+    0
+};
+
+// Crashing a vehicle doesn't fire the EH for each hitpoint so the "ace_hdbracket" code never runs
+// It does fire the EH multiple times, but this seems to scale with the intensity of the crash
+private _vehicle = vehicle _unit;
+if (
+    EGVAR(medical,enableVehicleCrashes) &&
+    {_hitPoint isEqualTo "#structural"} &&
+    {_ammo isEqualTo ""} &&
+    {_vehicle != _unit} &&
+    {vectorMagnitude (velocity _vehicle) > 5}
+    // todo: no way to detect if stationary and another vehicle hits you
+) exitWith {
+    private _damageSelectionArray = [
+        HITPOINT_INDEX_HEAD, 1, HITPOINT_INDEX_BODY, 1, HITPOINT_INDEX_LARM, 1,
+        HITPOINT_INDEX_RARM, 1, HITPOINT_INDEX_LLEG, 1, HITPOINT_INDEX_RLEG, 1
+    ];
+    [QEGVAR(medical,woundReceived), [_unit, "Body", _postArmorDamage, _unit, "vehiclecrash", _damageSelectionArray]] call CBA_fnc_localEvent;
+    TRACE_5("Crash",_unit,_shooter,_instigator,_damage,_postArmorDamage);
 
 // Engine damage to these hitpoints controls blood visuals, limping, weapon sway
 // Handled in fnc_damageBodyPart, persist here

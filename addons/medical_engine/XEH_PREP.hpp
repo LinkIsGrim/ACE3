@@ -3,6 +3,7 @@ PREP(damageBodyPart);
 PREP(disableThirdParty);
 PREP(getHitpointArmor);
 PREP(getItemArmor);
+PREP(getPostArmorDamage);
 PREP(handleDamage);
 PREP(setStructuralDamage);
 PREP(setUnconsciousAnim);
