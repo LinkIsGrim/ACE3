@@ -53,10 +53,10 @@ if (_ammoEntry isEqualTo []) then {
         private _cfgAmmo = configFile >> "CfgAmmo" >> _ammo;
     {
         _ammoEntry pushback (getNumber (_cfgAmmo >> _x));
-    } forEach ["caliber", "explosive", "hit"];
+    } forEach ["caliber", "explosive", "hit", "airFriction", "typicalSpeed"];
     GVAR(ammoCache) set [_ammo, _ammoEntry];
 };
-_ammoEntry params ["_caliber", "_explosive", "_hit"];
+_ammoEntry params ["_caliber", "_explosive", "_hit", "airFriction", "typicalSpeed"];
 
 if (_explosive > 0) then { // explosive damage should be treated as primarily force, so increase soft armor
     _armor = _armor * (1 + _explosive);
