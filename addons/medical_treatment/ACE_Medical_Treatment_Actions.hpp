@@ -279,7 +279,7 @@ class GVAR(actions) {
         displayNameProgress = CSTRING(Stitching);
         icon = QPATHTOEF(medical_gui,ui\surgical_kit.paa);
         category = "advanced";
-        items[] = {"ACE_surgicalKit"};
+        items[] = {"ACE_surgicalKit", "ACE_personalAidKit"};
         treatmentLocations = QGVAR(locationSurgicalKit);
         allowSelfTreatment = QGVAR(allowSelfStitch);
         medicRequired = QGVAR(medicSurgicalKit);
