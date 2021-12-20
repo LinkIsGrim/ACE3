@@ -237,7 +237,7 @@ class CfgWeapons {
         descriptionShort = CSTRING(Aid_Kit_Desc_Short);
         descriptionUse = CSTRING(Aid_Kit_Desc_Use);
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 10;
+            mass = 15;
         };
     };
     class ACE_surgicalKit: ACE_ItemCore {
@@ -249,7 +249,7 @@ class CfgWeapons {
         descriptionShort = CSTRING(SurgicalKit_Desc_Short);
         descriptionUse = CSTRING(SurgicalKit_Desc_Use);
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 15;
+            mass = 10;
         };
     };
     class ACE_bodyBag: ACE_ItemCore {
