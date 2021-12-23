@@ -4,7 +4,8 @@
 
 class RscPictureKeepAspect;
 class RscInGameUI {
-    class RscStanceInfo {
+    class RscUnitInfo;
+    class RscUnitInfoSoldier: RscUnitInfo { // Kept here to be (generally) difficulty independent, uses stance macros for placement
         controls[] += {QGVAR(speedIndicator)};
         class GVAR(speedIndicator): RscPictureKeepAspect {
             onLoad = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(speedIndicator),_this select 0)]);
