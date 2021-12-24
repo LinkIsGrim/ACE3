@@ -1,7 +1,6 @@
 class RscPictureKeepAspect;
 class RscInGameUI {
-    class RscUnitInfo;
-    class RscUnitInfoSoldier: RscUnitInfo { // Kept here to be (generally) difficulty independent, uses stance macros for placement
+    class RscStanceInfo { // Kept here to be (generally) difficulty independent, uses stance macros for placement
          controls[] += {
             QGVAR(bloodVolumeIndicator),
             QGVAR(stateIndicator1),
