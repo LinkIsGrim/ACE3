@@ -488,6 +488,7 @@
             <Czech>Barva selektoru</Czech>
             <Spanish>Selector de color</Spanish>
             <Turkish>Seçici Renk</Turkish>
+            <Korean>색상 선택</Korean>
         </Key>
         <Key ID="STR_ACE_Interact_Menu_consolidateSingleChild">
             <English>Consolidate single child actions</English>
@@ -495,6 +496,10 @@
             <Japanese>サブ動作を統合</Japanese>
             <Spanish>Consolidar acciones hijo únicas</Spanish>
             <French>Combiner les sous-actions uniques</French>
+            <German>Untergeordnete Aktionen zusammenfassen</German>
+            <Polish>Połącz akcje podrzędne</Polish>
+            <Chinesesimp>整合子操作</Chinesesimp>
+            <Korean>하위 동작 통합</Korean>
         </Key>
         <Key ID="STR_ACE_Interact_Menu_consolidateSingleChild_Description">
             <English>Combines parent action with only one child action together.</English>
@@ -502,6 +507,10 @@
             <Japanese>メインの動作とサブ動作一つを統合して表示します。</Japanese>
             <Spanish>Combina acciones padre con una única accion hijo de forma conjunta</Spanish>
             <French>Lorsqu'un menu ne contient qu'une seule sous-action, elle est combinée avec son menu parent.</French>
+            <German>Übergeordnete Aktionen mit nur einer Unteraktion zusammenfassen.</German>
+            <Polish>Gdy menu zawiera tylko jedną akcję podrzędną, łączy ją z akcją nadrzędną.</Polish>
+            <Chinesesimp>主操作与子操作集成显示。</Chinesesimp>
+            <Korean>대분류로 나뉜 행동을 한눈에 보여줍니다</Korean>
         </Key>
     </Package>
 </Project>

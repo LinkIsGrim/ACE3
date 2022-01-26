@@ -573,6 +573,7 @@
             <English>Horizontal limits</English>
             <German>Horizontale Grenzen</German>
             <Chinese>水平限制</Chinese>
+            <Chinesesimp>水平限制</Chinesesimp>
             <Japanese>水平制限</Japanese>
             <Italian>Limite orrizontale</Italian>
             <Polish>Limit poziomy</Polish>
@@ -581,11 +582,13 @@
             <French>Limites horizontales</French>
             <Czech>Horizontální limity</Czech>
             <Spanish>Límites horizontales</Spanish>
+            <Korean>수평 한계</Korean>
         </Key>
         <Key ID="STR_ACE_Scopes_statVerticalLimits">
             <English>Vertical limits</English>
             <German>Vertikale Grenzen</German>
             <Chinese>垂直限制</Chinese>
+            <Chinesesimp>垂直限制</Chinesesimp>
             <Japanese>垂直制限</Japanese>
             <Italian>Limite verticale</Italian>
             <Polish>Limit pionowy</Polish>
@@ -594,6 +597,7 @@
             <French>Limites verticales</French>
             <Czech>Vertikální limity</Czech>
             <Spanish>Límites verticales</Spanish>
+            <Korean>수직 한계</Korean>
         </Key>
     </Package>
 </Project>
