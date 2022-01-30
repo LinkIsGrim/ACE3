@@ -7,6 +7,7 @@
             <Spanish>Postas #00</Spanish>
             <German>#00 Schrotmunition</German>
             <Chinese>#00 鹿彈</Chinese>
+            <Chinesesimp>#00 鹿弹</Chinesesimp>
             <Italian>#00 Buckshot</Italian>
             <Japanese>#00 バックショット</Japanese>
             <French>Chevrotine #00</French>
@@ -15,12 +16,14 @@
             <Portuguese>#00 Chumbo</Portuguese>
             <Turkish>#00 Irisaçma</Turkish>
             <Russian>#00 Картечь</Russian>
+            <Korean>#00 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No00_Buck_Description">
             <English>#00 Buckshot</English>
             <Spanish>Postas #00</Spanish>
             <German>#00 Schrotmunition</German>
-            <Chinese>#00 鹿彈</Chinese>
+            <Chinese>#00 鹿彈(8.38 毫米)</Chinese>
+            <Chinesesimp>#00 鹿弹</Chinesesimp>
             <Italian>#00 Buckshot</Italian>
             <Japanese>#00 バックショット</Japanese>
             <French>Chevrotine #00</French>
@@ -29,12 +32,14 @@
             <Portuguese>#00 Chumbo</Portuguese>
             <Turkish>#00 Irisaçma</Turkish>
             <Russian>#00 Картечь</Russian>
+            <Korean>#00 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No0_Buck_NameShort">
             <English>#0 Buckshot</English>
             <Spanish>Postas #0</Spanish>
             <German>#0 Schrotmunition</German>
             <Chinese>#0 鹿彈</Chinese>
+            <Chinesesimp>#0 鹿弹</Chinesesimp>
             <Italian>#0 Buckshot</Italian>
             <Japanese>#0 バックショット</Japanese>
             <French>Chevrotine #0</French>
@@ -43,12 +48,14 @@
             <Portuguese>#0 Chumbo</Portuguese>
             <Turkish>#0 Irisaçma</Turkish>
             <Russian>#0 Картечь</Russian>
+            <Korean>#0 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No0_Buck_Description">
             <English>#0 Buckshot</English>
             <Spanish>Postas #0</Spanish>
             <German>#0 Schrotmunition</German>
             <Chinese>#0 鹿彈</Chinese>
+            <Chinesesimp>#0 鹿弹(8.1 毫米)</Chinesesimp>
             <Italian>#0 Buckshot</Italian>
             <Japanese>#0 バックショット</Japanese>
             <French>Chevrotine #0</French>
@@ -57,12 +64,14 @@
             <Portuguese>#0 Chumbo</Portuguese>
             <Turkish>#0 Irisaçma</Turkish>
             <Russian>#0 Картечь</Russian>
+            <Korean>#0 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No1_Buck_NameShort">
             <English>#1 Buckshot</English>
             <Spanish>Postas #1</Spanish>
             <German>#1 Schrotmunition</German>
             <Chinese>#1 鹿彈</Chinese>
+            <Chinesesimp>#1 鹿弹</Chinesesimp>
             <Italian>#1 Buckshot</Italian>
             <Japanese>#1 バックショット</Japanese>
             <French>Chevrotine #1</French>
@@ -71,12 +80,14 @@
             <Portuguese>#1 Chumbo</Portuguese>
             <Turkish>#1 Irisaçma</Turkish>
             <Russian>#1 Картечь</Russian>
+            <Korean>#1 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No1_Buck_Description">
             <English>#1 Buckshot</English>
             <Spanish>Postas #1</Spanish>
             <German>#1 Schrotmunition</German>
             <Chinese>#1 鹿彈</Chinese>
+            <Chinesesimp>#1 鹿弹(7.6 毫米)</Chinesesimp>
             <Italian>#1 Buckshot</Italian>
             <Japanese>#1 バックショット</Japanese>
             <French>Chevrotine #1</French>
@@ -85,12 +96,14 @@
             <Portuguese>#1 Chumbo</Portuguese>
             <Turkish>#1 Irisaçma</Turkish>
             <Russian>#1 Картечь</Russian>
+            <Korean>#1 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No2_Buck_NameShort">
             <English>#2 Buckshot</English>
             <Spanish>Postas #2</Spanish>
             <German>#2 Schrotmunition</German>
             <Chinese>#2 鹿彈</Chinese>
+            <Chinesesimp>#2 鹿弹</Chinesesimp>
             <Italian>#2 Buckshot</Italian>
             <Japanese>#2 バックショット</Japanese>
             <French>Chevrotine #2</French>
@@ -99,12 +112,14 @@
             <Portuguese>#2 Chumbo</Portuguese>
             <Turkish>#2 Irisaçma</Turkish>
             <Russian>#2 Картечь</Russian>
+            <Korean>#2 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No2_Buck_Description">
             <English>#2 Buckshot</English>
             <Spanish>Postas #2</Spanish>
             <German>#2 Schrotmunition</German>
             <Chinese>#2 鹿彈</Chinese>
+            <Chinesesimp>#2 鹿弹(6.9 毫米)</Chinesesimp>
             <Italian>#2 Buckshot</Italian>
             <Japanese>#2 バックショット</Japanese>
             <French>Chevrotine #2</French>
@@ -113,12 +128,14 @@
             <Portuguese>#2 Chumbo</Portuguese>
             <Turkish>#2 Irisaçma</Turkish>
             <Russian>#2 Картечь</Russian>
+            <Korean>#2 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No3_Buck_NameShort">
             <English>#3 Buckshot</English>
             <Spanish>Postas #3</Spanish>
             <German>#3 Schrotmunition</German>
             <Chinese>#3 鹿彈</Chinese>
+            <Chinesesimp>#3 鹿弹</Chinesesimp>
             <Italian>#3 Buckshot</Italian>
             <Japanese>#3 バックショット</Japanese>
             <French>Chevrotine #3</French>
@@ -127,12 +144,14 @@
             <Portuguese>#3 Chumbo</Portuguese>
             <Turkish>#3 Irisaçma</Turkish>
             <Russian>#3 Картечь</Russian>
+            <Korean>#3 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No3_Buck_Description">
             <English>#3 Buckshot</English>
             <Spanish>Postas #3</Spanish>
             <German>#3 Schrotmunition</German>
             <Chinese>#3 鹿彈</Chinese>
+            <Chinesesimp>#3 鹿弹(6.4 毫米)</Chinesesimp>
             <Italian>#3 Buckshot</Italian>
             <Japanese>#3 バックショット</Japanese>
             <French>Chevrotine #3</French>
@@ -141,12 +160,14 @@
             <Portuguese>#3 Chumbo</Portuguese>
             <Turkish>#3 Irisaçma</Turkish>
             <Russian>#3 Картечь</Russian>
+            <Korean>#3 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No4_Buck_NameShort">
             <English>#4 Buckshot</English>
             <Spanish>Postas #4</Spanish>
             <German>#4 Schrotmunition</German>
             <Chinese>#4 鹿彈</Chinese>
+            <Chinesesimp>#4 鹿弹</Chinesesimp>
             <Italian>#4 Buckshot</Italian>
             <Japanese>#4 バックショット</Japanese>
             <French>Chevrotine #4</French>
@@ -155,12 +176,14 @@
             <Portuguese>#4 Chumbo</Portuguese>
             <Turkish>#4 Irisaçma</Turkish>
             <Russian>#4 Картечь</Russian>
+            <Korean>#4 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No4_Buck_Description">
             <English>#4 Buckshot</English>
             <Spanish>Postas #4</Spanish>
             <German>#4 Schrotmunition</German>
             <Chinese>#4 鹿彈</Chinese>
+            <Chinesesimp>#4 鹿弹(6.10 毫米)</Chinesesimp>
             <Italian>#4 Buckshot</Italian>
             <Japanese>#4 バックショット</Japanese>
             <French>Chevrotine #4</French>
@@ -169,12 +192,14 @@
             <Portuguese>#4 Chumbo</Portuguese>
             <Turkish>#4 Irisaçma</Turkish>
             <Russian>#4 Картечь</Russian>
+            <Korean>#4 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No4_Bird_NameShort">
             <English>#4 Birdshot</English>
             <Spanish>Perdigones #4</Spanish>
             <German>#4 Vogelschrot</German>
-            <Chinese>#4 鹿彈</Chinese>
+            <Chinese>#4 鳥彈</Chinese>
+            <Chinesesimp>#4 鸟弹</Chinesesimp>
             <Italian>#4 Birdshot</Italian>
             <Japanese>#4 バックショット</Japanese>
             <French>Grenaille No.4</French>
@@ -182,12 +207,14 @@
             <Polish>#4 Śrut Drobny</Polish>
             <Turkish>#4 Küçük saçma</Turkish>
             <Russian>#4 Дробь</Russian>
+            <Korean>#4 버드샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_12Gauge_Pellets_No4_Bird_Description">
             <English>#4 Birdshot</English>
             <Spanish>Perdigones #4</Spanish>
             <German>#4 Vogelschrot</German>
-            <Chinese>#4 鹿彈</Chinese>
+            <Chinese>#4 鳥彈</Chinese>
+            <Chinesesimp>#4 鸟弹(3.30 毫米)</Chinesesimp>
             <Italian>#4 Birdshot</Italian>
             <Japanese>#4 バックショット</Japanese>
             <French>Grenaille No.4</French>
@@ -195,12 +222,14 @@
             <Polish>#4 Śrut Drobny (Birdshot)</Polish>
             <Turkish>#4 Küçük saçma</Turkish>
             <Russian>#4 Дробь</Russian>
+            <Korean>#4 버드샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_2Rnd_12Gauge_Pellets_No00_Buck_Name">
             <English>12 Gauge 2Rnd #00 Buckshot</English>
             <Spanish>2 Cartuchos de Postas Calibre 12 #00</Spanish>
             <German>12 Gauge 2Schuss #00 Schrotmunition</German>
             <Chinese>12鉛徑 2發  #00 鹿彈</Chinese>
+            <Chinesesimp>12铅径 2发 #00 鹿弹</Chinesesimp>
             <Italian>12 Gauge 2Rnd #00 Buckshot</Italian>
             <Japanese>12 ゲージ 2 発入り #00 バックショット</Japanese>
             <French>2 balles cal. 12 Chevrotine #00</French>
@@ -209,12 +238,14 @@
             <Portuguese>Chumbo #00 Calibre Doze 2 Tiros</Portuguese>
             <Russian>12 Калибр 2 патр. #00 Картечь</Russian>
             <Turkish>12 kalibre 2 mermi #00 İrisaçma</Turkish>
+            <Korean>12게이지 2발 #00 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_2Rnd_12Gauge_Pellets_No0_Buck_Name">
             <English>12 Gauge 2Rnd #0 Buckshot</English>
             <Spanish>2 Cartuchos de Postas Calibre 12 #0</Spanish>
             <German>12 Gauge 2Schuss #0 Schrotmunition</German>
             <Chinese>12鉛徑 2發  #0 鹿彈</Chinese>
+            <Chinesesimp>12铅径 2发 #0 鹿弹</Chinesesimp>
             <Italian>12 Gauge 2Rnd #0 Buckshot</Italian>
             <Japanese>12 ゲージ 2 発入り #0 バックショット</Japanese>
             <French>2 balles cal. 12 Chevrotine #0</French>
@@ -223,12 +254,14 @@
             <Portuguese>Chumbo #0 Calibre Doze 2 Tiros</Portuguese>
             <Russian>12 Калибр 2 патр. #0 Картечь</Russian>
             <Turkish>12 kalibre 2 mermi #0 İrisaçma</Turkish>
+            <Korean>12게이지 2발 #00 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_2Rnd_12Gauge_Pellets_No1_Buck_Name">
             <English>12 Gauge 2Rnd #1 Buckshot</English>
             <Spanish>2 Cartuchos de Postas Calibre 12 #1</Spanish>
             <German>12 Gauge 2Schuss #1 Schrotmunition</German>
             <Chinese>12鉛徑 2發  #1 鹿彈</Chinese>
+            <Chinesesimp>12铅径 2发 #1 鹿弹</Chinesesimp>
             <Italian>12 Gauge 2Rnd #1 Buckshot</Italian>
             <Japanese>12 ゲージ 2 発入り #1 バックショット</Japanese>
             <French>2 balles cal. 12 Chevrotine #1</French>
@@ -237,12 +270,14 @@
             <Portuguese>Chumbo #1 Calibre Doze 2 Tiros</Portuguese>
             <Russian>12 Калибр 2 патр. #1 Картечь</Russian>
             <Turkish>12 kalibre 2 mermi #1 İrisaçma</Turkish>
+            <Korean>12게이지 2발 #1 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_2Rnd_12Gauge_Pellets_No2_Buck_Name">
             <English>12 Gauge 2Rnd #2 Buckshot</English>
             <Spanish>2 Cartuchos de Postas Calibre 12 #2</Spanish>
             <German>12 Gauge 2Schuss #2 Schrotmunition</German>
             <Chinese>12鉛徑 2發  #2 鹿彈</Chinese>
+            <Chinesesimp>12铅径 2发 #2 鹿弹</Chinesesimp>
             <Italian>12 Gauge 2Rnd #2 Buckshot</Italian>
             <Japanese>12 ゲージ 2 発入り #2 バックショット</Japanese>
             <French>2 balles cal. 12 Chevrotine #2</French>
@@ -251,12 +286,14 @@
             <Portuguese>Chumbo #2 Calibre Doze 2 Tiros</Portuguese>
             <Russian>12 Калибр 2 патр. #2 Картечь</Russian>
             <Turkish>12 kalibre 2 mermi #2 İrisaçma</Turkish>
+            <Korean>12게이지 2발 #2 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_2Rnd_12Gauge_Pellets_No3_Buck_Name">
             <English>12 Gauge 2Rnd #3 Buckshot</English>
             <Spanish>2 Cartuchos de Postas Calibre 12 #3</Spanish>
             <German>12 Gauge 2Schuss #3 Schrotmunition</German>
             <Chinese>12鉛徑 2發  #3 鹿彈</Chinese>
+            <Chinesesimp>12铅径 2发 #3 鹿弹</Chinesesimp>
             <Italian>12 Gauge 2Rnd #3 Buckshot</Italian>
             <Japanese>12 ゲージ 2 発入り #3 バックショット</Japanese>
             <French>2 balles cal. 12 Chevrotine #3</French>
@@ -265,12 +302,14 @@
             <Portuguese>Chumbo #3 Calibre Doze 2 Tiros</Portuguese>
             <Russian>12 Калибр 2 патр. #3 Картечь</Russian>
             <Turkish>12 kalibre 2 mermi #3 İrisaçma</Turkish>
+            <Korean>12게이지 2발 #3 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_2Rnd_12Gauge_Pellets_No4_Buck_Name">
             <English>12 Gauge 2Rnd #4 Buckshot</English>
             <Spanish>2 Cartuchos de Postas Calibre 12 #4</Spanish>
             <German>12 Gauge 2Schuss #4 Schrotmunition</German>
             <Chinese>12鉛徑 2發  #4 鹿彈</Chinese>
+            <Chinesesimp>12铅径 2发 #4 鹿弹</Chinesesimp>
             <Italian>12 Gauge 2Rnd #4 Buckshot</Italian>
             <Japanese>12 ゲージ 2 発入り #4 バックショット</Japanese>
             <French>2 balles cal. 12 Chevrotine #4</French>
@@ -279,12 +318,14 @@
             <Portuguese>Chumbo #4 Calibre Doze 2 Tiros</Portuguese>
             <Russian>12 Калибр 2 патр. #4 Картечь</Russian>
             <Turkish>12 kalibre 2 mermi #4 İrisaçma</Turkish>
+            <Korean>12게이지 2발 #4 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_2Rnd_12Gauge_Pellets_No4_Bird_Name">
             <English>12 Gauge 2Rnd #4 Birdshot</English>
             <Spanish>2 Cartuchos de Perdigones Calibre 12 #4</Spanish>
             <German>12 Gauge 2Schuss #4 Schrotmunition</German>
-            <Chinese>12鉛徑 2發  #4 鹿彈</Chinese>
+            <Chinese>12鉛徑 2發  #4 鳥彈</Chinese>
+            <Chinesesimp>12铅径 2发 #4 鸟弹</Chinesesimp>
             <Italian>12 Gauge 2Rnd #4 Birdshot</Italian>
             <Japanese>12 ゲージ 2 発入り #4 バックショット</Japanese>
             <French>2 balles cal. 12 Grenaille No.4</French>
@@ -293,12 +334,14 @@
             <Portuguese>Chumbo #4 Calibre Doze 2 Tiros</Portuguese>
             <Russian>12 Калибр 2 патр. #4 Дробь</Russian>
             <Turkish>12 kalibre 2 mermi #4 İrisaçma</Turkish>
+            <Korean>12게이지 2발 #4 버드샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_6Rnd_12Gauge_Pellets_No00_Buck_Name">
             <English>12 Gauge 6Rnd #00 Buckshot</English>
             <Spanish>6 Cartuchos de Postas Calibre 12 #00</Spanish>
             <German>12 Gauge 6Schuss #00 Schrotmunition</German>
             <Chinese>12鉛徑 6發  #00 鹿彈</Chinese>
+            <Chinesesimp>12铅径 6发 #00 鹿弹</Chinesesimp>
             <Italian>12 Gauge 6Rnd #00 Buckshot</Italian>
             <Japanese>12 ゲージ 6 発入り #00 バックショット</Japanese>
             <French>6 balles cal. 12 Chevrotine #00</French>
@@ -307,12 +350,14 @@
             <Portuguese>Chumbo #00 Calibre Doze 6 Tiros</Portuguese>
             <Russian>12 Калибр 6 патр. #00 Картечь</Russian>
             <Turkish>12 kalibre 6 mermi #00 İrisaçma</Turkish>
+            <Korean>12게이지 6발 #00 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_6Rnd_12Gauge_Pellets_No0_Buck_Name">
             <English>12 Gauge 6Rnd #0 Buckshot</English>
             <Spanish>6 Cartuchos de Postas Calibre 12 #0</Spanish>
             <German>12 Gauge 6Schuss #0 Schrotmunition</German>
             <Chinese>12鉛徑 6發  #0 鹿彈</Chinese>
+            <Chinesesimp>12铅径 6发 #0 鹿弹</Chinesesimp>
             <Italian>12 Gauge 6Rnd #0 Buckshot</Italian>
             <Japanese>12 ゲージ 6 発入り #0 バックショット</Japanese>
             <French>6 balles cal. 12 Chevrotine #0</French>
@@ -321,12 +366,14 @@
             <Portuguese>Chumbo #0 Calibre Doze 6 Tiros</Portuguese>
             <Russian>12 Калибр 6 патр. #0 Картечь</Russian>
             <Turkish>12 kalibre 6 mermi #0 İrisaçma</Turkish>
+            <Korean>12게이지 6발 #0 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_6Rnd_12Gauge_Pellets_No1_Buck_Name">
             <English>12 Gauge 6Rnd #1 Buckshot</English>
             <Spanish>6 Cartuchos de Postas Calibre 12 #1</Spanish>
             <German>12 Gauge 6Schuss #1 Schrotmunition</German>
             <Chinese>12鉛徑 6發  #1 鹿彈</Chinese>
+            <Chinesesimp>12铅径 6发 #1 鹿弹</Chinesesimp>
             <Italian>12 Gauge 6Rnd #1 Buckshot</Italian>
             <Japanese>12 ゲージ 6 発入り #1 バックショット</Japanese>
             <French>6 balles cal. 12 Chevrotine #1</French>
@@ -335,12 +382,14 @@
             <Portuguese>Chumbo #1 Calibre Doze 6 Tiros</Portuguese>
             <Russian>12 Калибр 6 патр. #1 Картечь</Russian>
             <Turkish>12 kalibre 6 mermi #1 İrisaçma</Turkish>
+            <Korean>12게이지 6발 #1 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_6Rnd_12Gauge_Pellets_No2_Buck_Name">
             <English>12 Gauge 6Rnd #2 Buckshot</English>
             <Spanish>6 Cartuchos de Postas Calibre 12 #2</Spanish>
             <German>12 Gauge 6Schuss #2 Schrotmunition</German>
             <Chinese>12鉛徑 6發  #2 鹿彈</Chinese>
+            <Chinesesimp>12铅径 6发 #2 鹿弹</Chinesesimp>
             <Italian>12 Gauge 6Rnd #2 Buckshot</Italian>
             <Japanese>12 ゲージ 6 発入り #2 バックショット</Japanese>
             <French>6 balles cal. 12 Chevrotine #2</French>
@@ -349,12 +398,14 @@
             <Portuguese>Chumbo #2 Calibre Doze 6 Tiros</Portuguese>
             <Russian>12 Калибр 6 патр. #2 Картечь</Russian>
             <Turkish>12 kalibre 6 mermi #2 İrisaçma</Turkish>
+            <Korean>12게이지 6발 #2 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_6Rnd_12Gauge_Pellets_No3_Buck_Name">
             <English>12 Gauge 6Rnd #3 Buckshot</English>
             <Spanish>6 Cartuchos de Postas Calibre 12 #3</Spanish>
             <German>12 Gauge 6Schuss #3 Schrotmunition</German>
             <Chinese>12鉛徑 6發  #3 鹿彈</Chinese>
+            <Chinesesimp>12铅径 6发 #3 鹿弹</Chinesesimp>
             <Italian>12 Gauge 6Rnd #3 Buckshot</Italian>
             <Japanese>12 ゲージ 6 発入り #3 バックショット</Japanese>
             <French>6 balles cal. 12 Chevrotine #3</French>
@@ -363,12 +414,14 @@
             <Portuguese>Chumbo #3 Calibre Doze 6 Tiros</Portuguese>
             <Russian>12 Калибр 6 патр. #3 Картечь</Russian>
             <Turkish>12 kalibre 6 mermi #3 İrisaçma</Turkish>
+            <Korean>12게이지 6발 #3 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_6Rnd_12Gauge_Pellets_No4_Buck_Name">
             <English>12 Gauge 6Rnd #4 Buckshot</English>
             <Spanish>6 Cartuchos de Postas Calibre 12 #4</Spanish>
             <German>12 Gauge 6Schuss #4 Schrotmunition</German>
             <Chinese>12鉛徑 6發  #4 鹿彈</Chinese>
+            <Chinesesimp>12铅径 6发 #4 鹿弹</Chinesesimp>
             <Italian>12 Gauge 6Rnd #4 Buckshot</Italian>
             <Japanese>12 ゲージ 6 発入り #4 バックショット</Japanese>
             <French>6 balles cal. 12 Chevrotine #4</French>
@@ -377,12 +430,14 @@
             <Portuguese>Chumbo #4 Calibre Doze 6 Tiros</Portuguese>
             <Russian>12 Калибр 6 патр. #4 Картечь</Russian>
             <Turkish>12 kalibre 6 mermi #4 İrisaçma</Turkish>
+            <Korean>12게이지 6발 #4 벅샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_6Rnd_12Gauge_Pellets_No4_Bird_Name">
             <English>12 Gauge 6Rnd #4 Birdshot</English>
             <Spanish>6 Cartuchos de Perdigones Calibre 12 #4</Spanish>
             <German>12 Gauge 6Schuss #4 Schrotmunition</German>
-            <Chinese>12鉛徑 6發  #4 鹿彈</Chinese>
+            <Chinese>12鉛徑 6發  #4 鳥彈</Chinese>
+            <Chinesesimp>12铅径 6发 #4 鸟弹</Chinesesimp>
             <Italian>12 Gauge 6Rnd #4 Birdshot</Italian>
             <Japanese>12 ゲージ 6 発入り #4 バックショット</Japanese>
             <French>6 balles cal. 12 Grenaille No.4</French>
@@ -390,12 +445,14 @@
             <Polish>12 Gauge 6 naboi #4 Śrut</Polish>
             <Russian>12 Калибр 6 патр. #4 Дробь</Russian>
             <Turkish>12 kalibre 6 mermi #4 İrisaçma</Turkish>
+            <Korean>12게이지 6발 #4 버드샷</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_15Rnd_12Gauge_Pellets_No00_Buck_Name">
             <English>12 Gauge 15Rnd #00 Buckshot</English>
             <Spanish>15 Cartuchos de Postas Calibre 12 #00</Spanish>
             <German>12 Gauge 15Schuss #00 Schrotmunition</German>
             <Chinese>12鉛徑 15發  #00 鹿彈</Chinese>
+            <Chinesesimp>12铅径 15发 #00 鹿弹</Chinesesimp>
             <Italian>12 Gauge 15Rnd #00 Buckshot</Italian>
             <Japanese>12 ゲージ 15 発入り #00 バックショット</Japanese>
             <French>15 balles cal. 12 Chevrotine #00</French>
@@ -404,6 +461,7 @@
             <Portuguese>Chumbo #00 Calibre Doze 15 Tiros</Portuguese>
             <Russian>12 Калибр 15 патр. #00 Картечь</Russian>
             <Turkish>12 kalibre 15 mermi #00 İrisaçma</Turkish>
+            <Korean>12게이지 15발 #00 벅샷</Korean>
         </Key>
         <!-- QBU -->
         <Key ID="STR_ACE_Ballistics_20Rnd_65x47_Scenar_mag_Name">
@@ -2765,6 +2823,8 @@
             <French>Ch. 6,5x47 mm 30Cps Sable (HPBT Scenar)</French>
             <German>6.5x47 mm 30-Patronen-Magazin Sandfarben (HPBT Scenar)</German>
             <Polish>Magazynek 6.5x47 mm 30rd Piaskowy (HPBT Scenar)</Polish>
+            <Chinesesimp>6.5x47毫米 30发 沙色弹夹(Lapua 空尖艇尾狙击专用弹)</Chinesesimp>
+            <Korean>6.5x47 mm 30발 사막 탄창 (HPBT Scenar)</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_30Rnd_65x47_Scenar_msbs_mag_Name">
             <English>6.5x47 mm 30Rnd Promet Mag (HPBT Scenar)</English>
@@ -2772,6 +2832,8 @@
             <French>Ch. 6,5x47 mm 30Cps Promet (HPBT Scenar)</French>
             <German>6.5x47 mm 30-Patronen-Magazin für Promet (HPBT Scenar)</German>
             <Polish>Magazynek 6.5x47 mm 30rd Promet (HPBT Scenar)</Polish>
+            <Chinesesimp>6.5x47毫米 30发 Promet弹夹(Lapua 空尖艇尾狙击专用弹)</Chinesesimp>
+            <Korean>6.5x47 mm 30발 프로멧 탄창 (HPBT Scenar)</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_30Rnd_65x47_Scenar_black_mag_Name">
             <English>6.5x47 mm 30Rnd Black Mag (HPBT Scenar)</English>
@@ -2779,6 +2841,8 @@
             <French>Ch. 6,5x47 mm 30Cps Noir (HPBT Scenar)</French>
             <German>6.5x47 mm 30-Patronen-Magazin Schwarz (HPBT Scenar)</German>
             <Polish>Magazynek 6.5x47 mm 30rd Czarny (HPBT Scenar)</Polish>
+            <Chinesesimp>6.5x47毫米 30发 黑色弹夹(Lapua 空尖艇尾狙击专用弹)</Chinesesimp>
+            <Korean>6.5x47 mm 30발 검정 탄창 (HPBT Scenar)</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_30Rnd_65x47_Scenar_khaki_mag_Name">
             <English>6.5x47 mm 30Rnd Khaki Mag (HPBT Scenar)</English>
@@ -2786,6 +2850,8 @@
             <French>Ch. 6,5x47 mm 30Cps Kaki (HPBT Scenar)</French>
             <German>6.5x47 mm 30-Patronen-Magazin Khaki (HPBT Scenar)</German>
             <Polish>Magazynek 6.5x47 mm 30rd Khaki (HPBT Scenar)</Polish>
+            <Chinesesimp>6.5x47毫米 30发 卡其色弹夹(Lapua 空尖艇尾狙击专用弹)</Chinesesimp>
+            <Korean>6.5x47 mm 30발 카키 탄창 (HPBT Scenar)</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_30Rnd_65x47_Scenar_mag_NameShort">
             <English>6.5 mm Lapua</English>
@@ -2844,6 +2910,8 @@
             <French>Ch. 6,5 mm Creedmor 30Cps Sable</French>
             <German>6.5 mm Creedmor 30-Patronen-Magazin Sandfarben</German>
             <Polish>Magazynek 6.5 mm Creedmor 30Rnd Piaskowy</Polish>
+            <Chinesesimp>6.5毫米 Creedmor狙击专用弹 30发 沙色弹夹</Chinesesimp>
+            <Korean>6.5 mm 크리드무어 30발 사막 탄창</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_30Rnd_65_Creedmor_msbs_mag_Name">
             <English>6.5 mm Creedmor 30Rnd Promet Mag</English>
@@ -2851,6 +2919,8 @@
             <French>Ch. 6,5 mm Creedmor 30Cps Promet</French>
             <German>6.5 mm Creedmor 30-Patronen-Magazin für Promet</German>
             <Polish>Magazynek 6.5 mm Creedmor 30Rnd Promet</Polish>
+            <Chinesesimp>6.5毫米 Creedmor狙击专用弹 30发 Promet弹夹</Chinesesimp>
+            <Korean>6.5 mm 크리드무어 30발 프로멧 탄창</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_30Rnd_65_Creedmor_black_mag_Name">
             <English>6.5 mm Creedmor 30Rnd Black Mag</English>
@@ -2858,6 +2928,8 @@
             <French>Ch. 6,5 mm Creedmor 30Cps Noir</French>
             <German>6.5 mm Creedmor 30-Patronen-Magazin Schwarz</German>
             <Polish>Magazynek 6.5 mm Creedmor 30Rnd Czarny</Polish>
+            <Chinesesimp>6.5毫米 Creedmor狙击专用弹 30发 黑色弹夹</Chinesesimp>
+            <Korean>6.5 mm 크리드무어 30발 검정 탄창</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_30Rnd_65_Creedmor_khaki_mag_Name">
             <English>6.5 mm Creedmor 30Rnd Khaki Mag</English>
@@ -2865,6 +2937,8 @@
             <French>Ch. 6,5 mm Creedmor 30Cps Kaki</French>
             <German>6.5 mm Creedmor 30-Patronen-Magazin Khaki</German>
             <Polish>Magazynek 6.5 mm Creedmor 30Rnd Khaki</Polish>
+            <Chinesesimp>6.5毫米 Creedmor狙击专用弹 30发 卡其色弹夹</Chinesesimp>
+            <Korean>6.5 mm 크리드무어 30발 카키 탄창</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_30Rnd_65_Creedmor_mag_NameShort">
             <English>6.5 mm CM</English>
@@ -3084,7 +3158,7 @@
             <Japanese>12.7x99 mm 5発入り 弾倉</Japanese>
             <Korean>5발들이 12.7x99 mm 탄창</Korean>
             <Chinese>12.7x99毫米 5發 彈匣</Chinese>
-            <Chinesesimp>12.7x99 mm 5发 弹匣</Chinesesimp>
+            <Chinesesimp>12.7x99毫米 5发 弹匣</Chinesesimp>
             <Turkish>12.7x99 mm 5Rnd Mag</Turkish>
         </Key>
         <Key ID="STR_ACE_Ballistics_5Rnd_127x99_Mag_Description">
@@ -3101,7 +3175,7 @@
             <Japanese>口径: 12.7x99 mm&lt;br /&gt;装填数: 5</Japanese>
             <Korean>구경: 12.7x99 mm&lt;br /&gt;장탄수: 5</Korean>
             <Chinese>口徑: 12.7x99毫米&lt;br /&gt;發數: 5</Chinese>
-            <Chinesesimp>口径: 12.7x99 mm&lt;br /&gt;发数: 5</Chinesesimp>
+            <Chinesesimp>口径: 12.7x99毫米&lt;br /&gt;发数: 5</Chinesesimp>
             <Turkish>Kalibre: 12.7x99 mm&lt;br /&gt;Mermi: 5</Turkish>
         </Key>
         <Key ID="STR_ACE_Ballistics_10Rnd_127x99_Mag_Name">
@@ -3118,7 +3192,7 @@
             <Japanese>12.7x99 mm 10発入り 弾倉</Japanese>
             <Korean>10발들이 12.7x99 mm 탄창</Korean>
             <Chinese>12.7x99毫米 10發 彈匣</Chinese>
-            <Chinesesimp>12.7x99 mm 10发 弹匣</Chinesesimp>
+            <Chinesesimp>12.7x99毫米 10发 弹匣</Chinesesimp>
             <Turkish>12.7x99 mm 10Rnd Mag</Turkish>
         </Key>
         <Key ID="STR_ACE_Ballistics_10Rnd_127x99_Mag_Description">
@@ -3135,7 +3209,7 @@
             <Japanese>口径: 12.7x99 mm&lt;br /&gt;装填数: 10</Japanese>
             <Korean>구경: 12.7x99 mm&lt;br /&gt;장탄수: 10</Korean>
             <Chinese>口徑: 12.7x99毫米&lt;br /&gt;發數: 10</Chinese>
-            <Chinesesimp>口径: 12.7x99 mm&lt;br /&gt;发数: 10</Chinesesimp>
+            <Chinesesimp>口径: 12.7x99毫米&lt;br /&gt;发数: 10</Chinesesimp>
             <Turkish>Kalibre: 12.7x99 mm&lt;br /&gt;Mermi: 10</Turkish>
         </Key>
         <Key ID="STR_ACE_Ballistics_127x99_Mag_NameShort">
@@ -3152,7 +3226,7 @@
             <Japanese>12.7 mm</Japanese>
             <Korean>12.7 mm</Korean>
             <Chinese>12.7毫米</Chinese>
-            <Chinesesimp>12.7 mm</Chinesesimp>
+            <Chinesesimp>12.7毫米</Chinesesimp>
             <Turkish>12.7 mm</Turkish>
         </Key>
         <Key ID="STR_ACE_Ballistics_5Rnd_127x99_API_Mag_Name">
@@ -3355,6 +3429,7 @@
             <French>Pas du canon</French>
             <Czech>Stoupání vývrtu hlavně</Czech>
             <Spanish>Estriado del cañón</Spanish>
+            <Korean>강선 회전율</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_statBarrelLength">
             <English>Barrel length</English>
@@ -3370,6 +3445,7 @@
             <Czech>Délka hlavně</Czech>
             <Spanish>Longitud del cañón</Spanish>
             <Turkish>Namlu Uzunluğu</Turkish>
+            <Korean>총열 길이</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_statBallisticCoef">
             <English>Ballistic coefficient</English>
@@ -3385,6 +3461,7 @@
             <Czech>Balistický koeficient</Czech>
             <Spanish>Coheficiente de balística</Spanish>
             <Turkish>Balistik Katsayısı</Turkish>
+            <Korean>탄도 계수</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_statBulletMass">
             <English>Bullet mass</English>
@@ -3400,6 +3477,7 @@
             <Czech>Váha projektilu</Czech>
             <Spanish>Masa de la bala</Spanish>
             <Turkish>Mermi Ağırlığı</Turkish>
+            <Korean>탄두 질량</Korean>
         </Key>
         <Key ID="STR_ACE_Ballistics_statMuzzleVelocity">
             <English>Muzzle velocity</English>
@@ -3415,6 +3493,7 @@
             <Czech>Úsťová rychlost</Czech>
             <Spanish>Velocidad inicial</Spanish>
             <Turkish>Namlu çıkış hızı</Turkish>
+            <Korean>총구 속도</Korean>
         </Key>
     </Package>
 </Project>
