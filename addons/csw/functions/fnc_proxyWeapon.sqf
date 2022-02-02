@@ -23,7 +23,9 @@ TRACE_4("proxyWeapon",_staticWeapon,_turret,_needed,_emptyWeapon);
 
 if (_staticWeapon getVariable [format [QGVAR(proxyHandled_%1), _turret], false]) exitWith { TRACE_1("already handled",typeOf _staticWeapon); };
 
-private _proxyWeapon = getText (configOf _staticWeapon >> "ace_csw" >> "proxyWeapon");
+private _typeOf = typeOf _staticWeapon;
+private _configOf = configOf _staticWeapon;
+private _proxyWeapon = getText (_configOf >> "ace_csw" >> "proxyWeapon");
 
 TRACE_2("",_typeOf,_proxyWeapon);
 if (_proxyWeapon == "") exitWith {};
