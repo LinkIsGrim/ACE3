@@ -23,10 +23,10 @@ params ["_medic", "_patient", "_items"];
 scopeName "Main";
 
 if (_medic isEqualTo _patient) exitWith {
-  {
-    _medic removeItem _x;
-    [_medic, _x] breakOut "Main";
-  } forEach _items;
+    {
+        _medic removeItem _x;
+        [_medic, _x] breakOut "Main";
+    } forEach _items;
 };
 
 private _useOrder = [[_patient, _medic], [_medic, _patient], [_medic]] select GVAR(allowSharedEquipment);
