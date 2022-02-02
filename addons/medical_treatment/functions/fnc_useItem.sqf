@@ -35,23 +35,21 @@ private _useOrder = [[_patient, _medic], [_medic, _patient], [_medic]] select GV
     private _unitItems = [backpackItems _x, vestItems _x, uniformItems _x];
 
     {
-      switch true do {
         scopeName "Loop";
-
-        case (_x in (_unitItems select 0)): {
-          _unit removeItemFromBackpack _x;
-          breakWith ([_unit, _x] breakOut "Main");
+        switch true do {
+            case (_x in (_unitItems select 0)): {
+                _unit removeItemFromBackpack _x;
+                breakWith ([_unit, _x] breakOut "Main");
+            };
+            case (_x in (_unitItems select 1)): {
+                _unit removeItemFromVest _x;
+                breakWith ([_unit, _x] breakOut "Main");
+            };
+            case (_x in (_unitItems select 2)): {
+                _unit removeItem _x;
+                breakWith ([_unit, _x] breakOut "Main");
+            };
         };
-        case (_x in (_unitItems select 1)): {
-          _unit removeItemFromVest _x;
-          breakWith ([_unit, _x] breakOut "Main");
-        };
-        case (_x in (_unitItems select 2)): {
-          _unit removeItem _x;
-          breakWith ([_unit, _x] breakOut "Main");
-        };
-        default {};
-      };
     } forEach _items;
 } forEach _useOrder;
 

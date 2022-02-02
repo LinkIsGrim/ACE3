@@ -35,7 +35,7 @@ if (EGVAR(medical,spontaneousWakeUpChance) > 0) then {
             _unit setVariable [QEGVAR(medical,lastWakeUpCheck), CBA_missionTime];
         };
 
-        private _wakeUpCheckInterval = ace_medical_const_WakeUpInterval;
+        private _wakeUpCheckInterval = EGVAR(medical,const_wakeUpInterval);
         if (EGVAR(medical,spontaneousWakeUpEpinephrineBoost) > 1) then {
             private _epiEffectiveness = [_unit, "Epinephrine", false] call EFUNC(medical_status,getMedicationCount);
             _wakeUpCheckInterval = (_wakeUpCheckInterval * linearConversion [0.7, 1, _bloodVolume / 6, 1, 1 / 6, true] * linearConversion [0, 1, _epiEffectiveness, 1, 1 / EGVAR(medical,spontaneousWakeUpEpinephrineBoost), true]) max 6.8;

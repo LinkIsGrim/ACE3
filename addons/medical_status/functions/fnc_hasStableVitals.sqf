@@ -17,7 +17,7 @@
 
 params ["_unit"];
 
-if (GET_BLOOD_VOLUME(_unit) < ace_medical_bloodVolumeThreshold) exitWith { false };
+if (GET_BLOOD_VOLUME(_unit) < EGVAR(medical,bloodVolumeThreshold)) exitWith { false };
 if IN_CRDC_ARRST(_unit) exitWith { false };
 
 private _cardiacOutput = [_unit] call FUNC(getCardiacOutput);
@@ -26,7 +26,7 @@ if (_bloodLoss > (BLOOD_LOSS_KNOCK_OUT_THRESHOLD * _cardiacOutput) / 2) exitWith
 
 private _bloodPressure = GET_BLOOD_PRESSURE(_unit);
 _bloodPressure params ["_bloodPressureL"];
-if (_bloodPressureL < (50 * ace_medical_bloodPressureThresholdCoefficient)) exitWith { false };
+if (_bloodPressureL < (50 * EGVAR(medical,bloodPressureThresholdCoefficient))) exitWith { false };
 
 private _heartRate = GET_HEART_RATE(_unit);
 if (_heartRate < 40) exitWith { false };
