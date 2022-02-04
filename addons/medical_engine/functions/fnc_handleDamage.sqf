@@ -143,7 +143,6 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
     TRACE_2("incoming",_allDamages,_damageStructural);
 
     _allDamages sort false;
-    copyToClipboard str (_allDamages);
     _allDamages = _allDamages apply {[_x select 2, _x select 4, _x select 0]};
 
     // Environmental damage sources all have empty ammo string
