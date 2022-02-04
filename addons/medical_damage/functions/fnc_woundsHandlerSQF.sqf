@@ -86,7 +86,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         };
         GVAR(woundDetails) get _woundTypeToAdd params ["","_injuryBleedingRate","_injuryPain","_causeLimping","_causeFracture"];
         private _woundClassIDToAdd = GVAR(woundClassNames) find _woundTypeToAdd;
-    
+
         // Add a bit of random variance to wounds
         private _woundDamage = _dmgPerWound * _dmgMultiplier * random [0.9, 1, 1.1];
 
@@ -94,14 +94,14 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         _bodyPartVisParams set [[1,2,3,3,4,4] select _bodyPartNToAdd, true]; // Mark the body part index needs updating
 
         // Anything above this value is guaranteed worst wound possible
-        private _worstDamage = 2;
+        private _worstDamage = [3, 5] select (_bodyPartNToAdd > 1);
 
         #define LARGE_WOUND_THRESHOLD 0.5
 
         // Config specifies bleeding and pain for worst possible wound
         // Worse wound correlates to higher damage, damage is not capped at 1
         private _woundSize = linearConversion [0.1, _worstDamage, _woundDamage * _sizeMultiplier, LARGE_WOUND_THRESHOLD^3, 1, true];
-    
+
         private _pain = _woundSize * _painMultiplier * _injuryPain;
         _painLevel = _painLevel + _pain;
 
