@@ -94,9 +94,9 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         _bodyPartVisParams set [[1,2,3,3,4,4] select _bodyPartNToAdd, true]; // Mark the body part index needs updating
 
         // Anything above this value is guaranteed worst wound possible
-        private _worstDamage = [3, 5] select (_bodyPartNToAdd > 1);
+        private _worstDamage = [4, 8] select (_bodyPartNToAdd > 1);
 
-        #define LARGE_WOUND_THRESHOLD 0.5
+        #define LARGE_WOUND_THRESHOLD 0.75
 
         // Config specifies bleeding and pain for worst possible wound
         // Worse wound correlates to higher damage, damage is not capped at 1
