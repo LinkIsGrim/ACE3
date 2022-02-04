@@ -44,6 +44,9 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
 
     // silently ignore structural damage
     if (toLower _bodyPart isEqualTo "#structural") then {
+        if (_selectionSpecific > 0) then {
+            _criticalDamage = true;
+        };
         continue
     };
 
@@ -88,7 +91,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         private _woundClassIDToAdd = GVAR(woundClassNames) find _woundTypeToAdd;
 
         // Add a bit of random variance to wounds
-        private _woundDamage = _dmgPerWound * _dmgMultiplier * random [0.9, 1, 1.1];
+        private _woundDamage = _dmgPerWound * _dmgMultiplier * random [0.75, 1, 1.2];
 
         _bodyPartDamage set [_bodyPartNToAdd, (_bodyPartDamage select _bodyPartNToAdd) + _woundDamage];
         _bodyPartVisParams set [[1,2,3,3,4,4] select _bodyPartNToAdd, true]; // Mark the body part index needs updating
@@ -96,7 +99,7 @@ private _bodyPartVisParams = [_unit, false, false, false, false]; // params arra
         // Anything above this value is guaranteed worst wound possible
         private _worstDamage = [4, 8] select (_bodyPartNToAdd > 1);
 
-        #define LARGE_WOUND_THRESHOLD 0.75
+        #define LARGE_WOUND_THRESHOLD 0.5
 
         // Config specifies bleeding and pain for worst possible wound
         // Worse wound correlates to higher damage, damage is not capped at 1
