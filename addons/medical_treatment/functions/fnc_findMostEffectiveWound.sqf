@@ -7,14 +7,17 @@
  * 0: Patient <OBJECT>
  * 1: Treatment classname <STRING>
  * 2: Body part index <NUMBER>
+ * 3: Percentage of bandage remaining <NUMBER>
  *
  * Return Value:
- * [Wound, Index, Effectiveness] <ARRAY, NUMBER, NUMBER>
+ * [Wound, [Effectiveness, Index, Impact]] <HASHMAP>
  *
  * Public: No
+ * Example:
+ * [player, "Head", "FieldDressing", 1] call ace_medical_treatment_fnc_findMostEffectiveWound
  */
 
-params ["_patient", "_bandage", "_partIndex"];
+params ["_patient", "_bandage", "_partIndex", ["_bandageRemaining", 1]];
 
 // Get the default effectiveness for the used bandage
 private _config = configFile >> QUOTE(ADDON) >> "Bandaging";
@@ -30,17 +33,23 @@ if (isClass (_config >> _bandage)) then {
 
 // Iterate over open wounds to find the most effective target
 private _openWounds = GET_OPEN_WOUNDS(_patient);
-if (_openWounds isEqualTo []) exitWith { [EMPTY_WOUND, -1, -1] };
+if (_openWounds isEqualTo []) exitWith { [] };
 
-private _wound = EMPTY_WOUND;
-private _woundIndex = -1;
-private _effectivenessFound = -1;
+private _return = createHashMap;
 
-{
-    _x params ["_classID", "_partIndexN", "_amountOf", "_bleeding", "_damage"];
+while {_bandageRemaining > 0} do {
 
-    // Ignore wounds on other bodyparts
-    if (_partIndexN == _partIndex) then {
+    private _wound = EMPTY_WOUND;
+    private _woundIndex = -1;
+    private _effectivenessFound = -1;
+    private _impactFound = -1;
+
+    {
+        _x params ["_classID", "_partIndexN", "_amountOf", "_bleeding", "_damage"];
+
+        // Ignore iterated wounds & wounds on other bodyparts
+        if (_x in _return || {_partIndexN != _partIndex}) then { continue };
+
         private _woundEffectiveness = _effectiveness;
 
         // Select the classname from the wound classname storage
@@ -54,19 +63,29 @@ private _effectivenessFound = -1;
                 _woundEffectiveness = getNumber (_woundTreatmentConfig >> "effectiveness");
             };
         } else {
-            // Basic medical bandage just has a base level config (same effectivenes for all wound types)
+            // Basic medical bandage just has a base level config (same effectiveness for all wound types)
             if (_bandage != "BasicBandage") then {
                 WARNING_2("No config for wound type [%1] config base [%2]",_className,_config);
             };
         };
 
+        // Multiply by coefficient in case this is a leftover bandage
+        _woundEffectiveness = _woundEffectiveness * _bandageRemaining;
+
         // Track most effective found so far
         if (_woundEffectiveness * _amountOf * _bleeding > _effectivenessFound * (_wound select 2) * (_wound select 3)) then {
             _effectivenessFound = _woundEffectiveness;
+            _impactFound = _amountOf min _effectivenessFound;
             _woundIndex = _forEachIndex;
             _wound = _x;
         };
-    };
-} forEach _openWounds;
+    } forEach _openWounds;
 
-[_wound, _woundIndex, _effectivenessFound]
+    // Exit if there are no more wounds to close
+    if (_woundIndex == -1) exitWith {};
+
+    _return set [_wound, [_effectivenessFound, _woundIndex, _impactFound]];
+    _bandageRemaining = _bandageRemaining - (_impactFound / _effectivenessFound);
+};
+
+_return
