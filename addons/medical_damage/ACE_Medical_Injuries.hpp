@@ -68,7 +68,7 @@ class ACE_Medical_Injuries {
 
         // if 1, wounds are only applied to the hitpoint that took the most damage. othewrise, wounds are applied to all damaged hitpoints
         selectionSpecific = 1;
-        
+
         // list of damage handlers, which will be called in reverse order
         // each entry should be a SQF expression that returns a function
         // this can also be overridden for each damage type
@@ -80,11 +80,11 @@ class ACE_Medical_Injuries {
             // bullets only create multiple wounds when the damage is very high
             thresholds[] = {{20, 10}, {4.5, 2}, {3, 1}, {0, 1}};
             selectionSpecific = 1;
-            
+
             class Avulsion {
                 // at damage, weight. between points, weight is interpolated then wound is chosen by weighted random.
                 // as with thresholds, but result is not rounded (decimal values used as-is)
-                weighting[] = {{1, 1}, {0.35, 0}};
+                weighting[] = {{2.5, 1}, {0.35, 0}};
                 /*
                 damageMultiplier = 1;
                 sizeMultiplier = 1;
