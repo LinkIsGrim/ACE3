@@ -100,50 +100,49 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
     _unit setVariable [QEGVAR(medical,lastDamageSource), _shooter];
     _unit setVariable [QEGVAR(medical,lastInstigator), _instigator];
 
-    private _damageStructural = _unit getVariable [QGVAR($#structural), [0, _unit getVariable [QGVAR(armorCache$#structural), ["", 0]] select 1, 0]];
+    private _damageStructural = _unit getVariable [QGVAR($#structural), [0, 0]];
 
     // --- Head
     private _damageHead = [
-        _unit getVariable [QGVAR($HitFace), [0, _unit getVariable [QGVAR(armorCache$HitFace), ["", 0]] select 1, 0]],
-        _unit getVariable [QGVAR($HitNeck), [0, _unit getVariable [QGVAR(armorCache$HitNeck), ["", 0]] select 1, 0]],
-        _unit getVariable [QGVAR($HitHead), [0, _unit getVariable [QGVAR(armorCache$HitHead), ["", 0]] select 1, 0]]
+        _unit getVariable [QGVAR($HitFace), [0, 0]],
+        _unit getVariable [QGVAR($HitNeck), [0, 0]],
+        _unit getVariable [QGVAR($HitHead), [0, 0]]
     ];
     _damageHead sort false;
     _damageHead = _damageHead select 0;
 
     // --- Body
     private _damageBody = [
-        _unit getVariable [QGVAR($HitPelvis), [0, _unit getVariable [QGVAR(armorCache$HitPelvis), ["", 0]] select 1, 0]],
-        _unit getVariable [QGVAR($HitAbdomen), [0, _unit getVariable [QGVAR(armorCache$HitAbdomen), ["", 0]] select 1, 0]],
-        _unit getVariable [QGVAR($HitDiaphragm), [0, _unit getVariable [QGVAR(armorCache$HitDiaphragm), ["", 0]] select 1, 0]],
-        _unit getVariable [QGVAR($HitChest), [0, _unit getVariable [QGVAR(armorCache$HitChest), ["", 0]] select 1, 0]]
+        _unit getVariable [QGVAR($HitPelvis), [0, 0]],
+        _unit getVariable [QGVAR($HitAbdomen), [0, 0]],
+        _unit getVariable [QGVAR($HitDiaphragm), [0, 0]],
+        _unit getVariable [QGVAR($HitChest), [0, 0]]
         // HitBody removed as it's a placeholder hitpoint and the high armor value (1000) throws the calculations off
     ];
     _damageBody sort false;
     _damageBody = _damageBody select 0;
 
     // --- Arms and Legs
-    private _damageLeftArm = _unit getVariable [QGVAR($HitLeftArm), [0, _unit getVariable [QGVAR(armorCache$HitLeftArm), ["", 0]] select 1, 0]];
-    private _damageRightArm = _unit getVariable [QGVAR($HitRightArm), [0, _unit getVariable [QGVAR(armorCache$HitRightArm), ["", 0]] select 1, 0]];
-    private _damageLeftLeg = _unit getVariable [QGVAR($HitLeftLeg), [0, _unit getVariable [QGVAR(armorCache$HitLeftLeg), ["", 0]] select 1, 0]];
-    private _damageRightLeg = _unit getVariable [QGVAR($HitRightLeg), [0, _unit getVariable [QGVAR(armorCache$HitRightLeg), ["", 0]] select 1, 0]];
+    private _damageLeftArm = _unit getVariable [QGVAR($HitLeftArm), [0, 0]];
+    private _damageRightArm = _unit getVariable [QGVAR($HitRightArm), [0, 0]];
+    private _damageLeftLeg = _unit getVariable [QGVAR($HitLeftLeg), [0, 0]];
+    private _damageRightLeg = _unit getVariable [QGVAR($HitRightLeg), [0, 0]];
 
-    // Find hit point that received the maximum damage
-    // Since damage can be equivalent with high caliber ammunition, also take armor into account
-    // Priority used for sorting if incoming damage is equivalent (e.g. max which is 4)
+    // Find hit point that received the maxium damage
+    // Priority used for sorting if incoming damage is equal
     private _allDamages = [
-        _damageHead       + [PRIORITY_HEAD,       "Head"],
-        _damageBody       + [PRIORITY_BODY,       "Body"],
-        _damageLeftArm    + [PRIORITY_LEFT_ARM,   "LeftArm"],
-        _damageRightArm   + [PRIORITY_RIGHT_ARM,  "RightArm"],
-        _damageLeftLeg    + [PRIORITY_LEFT_LEG,   "LeftLeg"],
-        _damageRightLeg   + [PRIORITY_RIGHT_LEG,  "RightLeg"],
-        _damageStructural + [PRIORITY_STRUCTURAL, "#structural"]
+        [_damageHead select 0,       PRIORITY_HEAD,       _damageHead select 1,       "Head"],
+        [_damageBody select 0,       PRIORITY_BODY,       _damageBody select 1,       "Body"],
+        [_damageLeftArm select 0,    PRIORITY_LEFT_ARM,   _damageLeftArm select 1,    "LeftArm"],
+        [_damageRightArm select 0,   PRIORITY_RIGHT_ARM,  _damageRightArm select 1,   "RightArm"],
+        [_damageLeftLeg select 0,    PRIORITY_LEFT_LEG,   _damageLeftLeg select 1,    "LeftLeg"],
+        [_damageRightLeg select 0,   PRIORITY_RIGHT_LEG,  _damageRightLeg select 1,   "RightLeg"],
+        [_damageStructural select 0, PRIORITY_STRUCTURAL, _damageStructural select 1, "#structural"]
     ];
     TRACE_2("incoming",_allDamages,_damageStructural);
 
     _allDamages sort false;
-    _allDamages = _allDamages apply {[_x select 2, _x select 4, _x select 0]};
+    _allDamages = _allDamages apply {[_x select 2, _x select 3, _x select 0]};
 
     // Environmental damage sources all have empty ammo string
     // No explicit source given, we infer from differences between them
@@ -194,7 +193,7 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
 };
 
 // Damages are stored for "ace_hdbracket" event triggered last
-_unit setVariable [format [QGVAR($%1), _hitPoint], [_realDamage, _armor, _newDamage]];
+_unit setVariable [format [QGVAR($%1), _hitPoint], [_realDamage, _newDamage]];
 
 // Engine damage to these hitpoints controls blood visuals, limping, weapon sway
 // Handled in fnc_damageBodyPart, persist here
