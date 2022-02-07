@@ -418,11 +418,11 @@ GVAR(reloadMutex_lastGesture) = "";
 
 ["CAManBase", "GestureChanged", {
     params ["_unit", "_gesture"];
-    if (
-        (GVAR(isReloading)) ||
-        {_unit isNotEqualTo ACE_Player} ||
-        {(weaponState ACE_Player) select 6 == 0}
-    ) exitWith {};
+    if (_unit isNotEqualTo ACE_Player) exitWith {};
+    if ((weaponState ACE_Player select 6) == 0) exitWith {
+        GVAR(isReloading) = false;
+        GVAR(reloadMutex_lastGesture) = "";
+    };
 
     TRACE_2("Reloading, blocking gestures",_weapon,_gesture);
     GVAR(isReloading) = true;
