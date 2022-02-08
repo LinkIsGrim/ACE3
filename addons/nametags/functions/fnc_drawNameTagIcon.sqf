@@ -32,13 +32,13 @@ _fnc_parameters = {
     private _targetIcon = _target getVariable QGVAR(rankIcon);
 
     private _icon = switch true do {
-        case _drawSoundwave: {
+        case (_drawSoundwave): {
             format [QPATHTOF(UI\soundwave%1.paa), floor random 10]
         };
 
-        case !_drawRank: {""};
-        case !isNil "_targetIcon": {_targetIcon};
-        case rank _target == "": {""};
+        case (!_drawRank): {""};
+        case (!isNil "_targetIcon"): {_targetIcon};
+        case ((rank _target) == ""): {""};
 
         default {
             private _targetFaction = _target getVariable [QGVAR(faction), faction _target];
