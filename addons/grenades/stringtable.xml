@@ -168,7 +168,7 @@
             <Turkish>CTS 7290 9- Flaş Bombası</Turkish>
             <Russian>CTS 7290-9 Светошумовая граната</Russian>
             <Spanish>Granada aturdidora CTS 7290 9-explosiones</Spanish>
-            <Korean>CTS 7290 9-뱅 섬광 수류탄</Korean>
+            <Korean>CTS 7290 9-bang 섬광 수류탄</Korean>
         </Key>
         <Key ID="STR_ACE_Grenades_CTS9_NameShort">
             <English>CTS 7290-9</English>
@@ -200,7 +200,7 @@
             <French>M127A1 Feu à main (Blanc)</French>
             <Japanese>M127A1 信号弾 (白)</Japanese>
             <Korean>M127A1 수타식 신호탄 (하얀색)</Korean>
-            <Chinesesimp>M127A1 手持式信号弹 (白色)</Chinesesimp>
+            <Chinesesimp>M127A1 手持式信号弹（白色）</Chinesesimp>
             <Chinese>M127A1 手持式信號彈 (白色)</Chinese>
             <Turkish>M127A1 El Sinyali (Beyaz)</Turkish>
         </Key>
@@ -217,7 +217,7 @@
             <French>M127A1 Feu à main (Rouge)</French>
             <Japanese>M127A1 信号弾 (赤)</Japanese>
             <Korean>M127A1 수타식 신호탄 (빨간색)</Korean>
-            <Chinesesimp>M127A1 手持式信号弹 (红色)</Chinesesimp>
+            <Chinesesimp>M127A1 手持式信号弹（红色）</Chinesesimp>
             <Chinese>M127A1 手持式信號彈 (紅色)</Chinese>
             <Turkish>M127A1 El Sinyali (Kırmızı)</Turkish>
         </Key>
@@ -234,7 +234,7 @@
             <French>M127A1 Feu à main (Vert)</French>
             <Japanese>M127A1 信号弾 (緑)</Japanese>
             <Korean>M127A1 수타식 신호탄 (초록색)</Korean>
-            <Chinesesimp>M127A1 手持式信号弹 (绿色)</Chinesesimp>
+            <Chinesesimp>M127A1 手持式信号弹（绿色）</Chinesesimp>
             <Chinese>M127A1 手持式信號彈 (綠色)</Chinese>
             <Turkish>M127A1 El Sinyali (Yeşil)</Turkish>
         </Key>
@@ -251,7 +251,7 @@
             <French>M127A1 Feu à main (Jaune)</French>
             <Japanese>M127A1 信号弾 (黄)</Japanese>
             <Korean>M127A1 수타식 신호탄 (노란색)</Korean>
-            <Chinesesimp>M127A1 手持式信号弹 (黄色)</Chinesesimp>
+            <Chinesesimp>M127A1 手持式信号弹（黄色）</Chinesesimp>
             <Chinese>M127A1 手持式信號彈 (黃色)</Chinese>
             <Turkish>M127A1 El Sinyali (Sarı)</Turkish>
         </Key>
@@ -336,7 +336,7 @@
             <Spanish>M127A1 (Blanca)</Spanish>
             <Japanese>M127A1 (白)</Japanese>
             <Korean>M127A1 (하양)</Korean>
-            <Chinesesimp>M127A1 (白色)</Chinesesimp>
+            <Chinesesimp>M127A1（白色）</Chinesesimp>
             <Chinese>M127A1 (白色)</Chinese>
             <Turkish>M127A1 (Beyaz)</Turkish>
         </Key>
@@ -353,7 +353,7 @@
             <Spanish>M127A1 (Roja)</Spanish>
             <Japanese>M127A1 (赤)</Japanese>
             <Korean>M127A1 (빨강)</Korean>
-            <Chinesesimp>M127A1 (红色)</Chinesesimp>
+            <Chinesesimp>M127A1（红色）</Chinesesimp>
             <Chinese>M127A1 (紅色)</Chinese>
             <Turkish>M127A1 (Kırmızı)</Turkish>
         </Key>
@@ -370,7 +370,7 @@
             <Spanish>M127A1 (Verde)</Spanish>
             <Japanese>M127A1 (緑)</Japanese>
             <Korean>M127A1 (초록)</Korean>
-            <Chinesesimp>M127A1 (绿色)</Chinesesimp>
+            <Chinesesimp>M127A1（绿色）</Chinesesimp>
             <Chinese>M127A1 (綠色)</Chinese>
             <Turkish>M127A1 (Yeşil)</Turkish>
         </Key>
@@ -387,7 +387,7 @@
             <Spanish>M127A1 (Amarilla)</Spanish>
             <Japanese>M127A1 (黄)</Japanese>
             <Korean>M127A1 (노랑)</Korean>
-            <Chinesesimp>M127A1 (黄色)</Chinesesimp>
+            <Chinesesimp>M127A1（黄色）</Chinesesimp>
             <Chinese>M127A1 (黃色)</Chinese>
             <Turkish>M127A1 (Sarı)</Turkish>
         </Key>
@@ -429,7 +429,7 @@
             <Russian>Зажигательная граната используется для уничтожения оружия, боеприпасов и прочего оборудования.</Russian>
             <Japanese>焼夷手榴弾は武器や弾薬箱などの装備を破壊する為に使われます。</Japanese>
             <Polish>Granat zapalający, używany do niszczenia broni, amunicji i innego sprzętu.</Polish>
-            <Korean>소이 수류탄은 무기나 탄약 그리고 장비를 파괴할때 쓰입니다.</Korean>
+            <Korean>소이 수류탄은 무기나 탄약 그리고 장비를 파괴할 때 쓰입니다.</Korean>
             <French>Grenade incendiaire utilisée pour détruire des armes, des munitions et d'autres équipements.</French>
             <Italian>Granata incendiaria usata per distruggere armi, munizioni e altri equipaggiamenti.</Italian>
             <Chinesesimp>燃烧手榴弹是用来摧毁武器，弹药以及其他装备的好帮手。</Chinesesimp>
@@ -566,7 +566,7 @@
             <Polish>Rzucany pakiet ładunków wybuchowych. 7 sekundowy zapalnik</Polish>
             <German>Werfbare Rucksackladung. 7 Sekunden Zeitzünder</German>
             <Chinesesimp>一个可投掷的炸药包。7秒定时引信</Chinesesimp>
-            <Korean>던질 수 있는 폭파 장약 입니다. 던지고 7초 후에 터집니다</Korean>
+            <Korean>던질 수 있는 폭파 장약입니다. 던지고 7초 후에 터집니다</Korean>
         </Key>
         <Key ID="STR_ACE_Grenades_DemoCharge_Remote_Mag_Throwable">
             <English>Explosive Charge (Throwable)</English>
@@ -588,7 +588,7 @@
             <Polish>Rzucany ładunkek wybuchowy. 7 sekundowy zapalnik</Polish>
             <German>Werfbare Sprengladung. 7 Sekunden Zeitzünder</German>
             <Chinesesimp>一个可投掷的炸药块。7秒定时引信</Chinesesimp>
-            <Korean>던질 수 있는 폭파 블럭 입니다. 던지고 7초 후에 터집니다</Korean>
+            <Korean>던질 수 있는 폭파 블럭입니다. 던지고 7초 후에 터집니다</Korean>
         </Key>
         <Key ID="STR_ACE_Grenades_Convert_Fuse">
             <English>Convert to short fuse</English>
@@ -636,7 +636,7 @@
             <Spanish>Permitir conversión de explosivos</Spanish>
             <Polish>Pozwól na konwersję ładunków wybuchowych</Polish>
             <German>Erlaube die Umwandlung von Sprengstoffen</German>
-            <Chinesesimp>允许爆炸性切换</Chinesesimp>
+            <Chinesesimp>允许转换炸药</Chinesesimp>
             <Korean>폭발물 변경 가능여부</Korean>
         </Key>
         <Key ID="STR_ACE_Grenades_convertExplosives_Description">
