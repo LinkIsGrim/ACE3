@@ -33,6 +33,27 @@ if (isNil QGVAR(maxWeightCarryRun)) then {
 // display event handler
 ["MouseZChanged", {_this select 1 call FUNC(handleScrollWheel)}] call CBA_fnc_addDisplayHandler;
 
+[QGVAR(carryingContainerClosed), {
+    params ["_container", "_owner"];
+
+    private _weight = [_container] call FUNC(getWeight);
+    private _ignoreWeight = _container getVariable [QGVAR(ignoreWeightCarry), false];
+    if (!_ignoreWeight && {_weight > ACE_maxWeightCarry}) exitWith {
+        [_owner, _container] call FUNC(dropObject_carry);
+    };
+    [_owner, "forceWalk", "ACE_dragging", _weight > GVAR(maxWeightCarryRun)] call EFUNC(common,statusEffect_set);
+    [_owner, "blockSprint", "ACE_dragging", _weight <= GVAR(maxWeightCarryRun)] call EFUNC(common,statusEffect_set);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(draggingContainerClosed), {
+    params ["_container", "_owner"];
+    private _weight = [_container] call FUNC(getWeight);
+    private _ignoreWeight = _container getVariable [QGVAR(ignoreWeightDrag), false];
+    if (!_ignoreWeight && {_weight > ACE_maxWeightDrag}) exitWith {
+        [_owner, _container] call FUNC(dropObject);
+    };
+}] call CBA_fnc_addEventHandler;
+
 //@todo Captivity?
 
 //Add Keybind:
