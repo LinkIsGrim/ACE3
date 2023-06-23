@@ -34,13 +34,13 @@ detach _target;
 // fix anim when aborting carrying persons
 if (_target isKindOf "CAManBase" || {animationState _unit in CARRY_ANIMATIONS}) then {
     if (vehicle _unit == _unit && {!(_unit getVariable ["ACE_isUnconscious", false])}) then {
-        [_unit, "", 2, true] call EFUNC(common,doAnimation);
+        [_unit, "", 2] call EFUNC(common,doAnimation);
     };
 
     if (_target getVariable ["ACE_isUnconscious", false]) then {
-        [_target, "unconscious", 2, true] call EFUNC(common,doAnimation);
+        [_target, "unconscious", 2] call EFUNC(common,doAnimation);
     } else {
-        [_target, "", 2, true] call EFUNC(common,doAnimation);  //@todo
+        [_target, "", 2] call EFUNC(common,doAnimation);  //@todo
     };
 };
 
@@ -48,7 +48,12 @@ if (_target isKindOf "CAManBase" || {animationState _unit in CARRY_ANIMATIONS}) 
 _unit removeWeapon "ACE_FakePrimaryWeapon";
 
 // reselect weapon and re-enable sprint
-_unit selectWeapon primaryWeapon _unit;
+private _previousWeaponIndex = _unit getVariable [QGVAR(previousWeapon), -1];
+_unit setVariable [QGVAR(previousWeapon), nil, true];
+
+if (_previousWeaponIndex != -1) then {
+    _unit action ["SwitchWeapon", _unit, _unit, _previousWeaponIndex];
+};
 
 [_unit, "forceWalk", "ACE_dragging", false] call EFUNC(common,statusEffect_set);
 [_unit, "blockSprint", "ACE_dragging", false] call EFUNC(common,statusEffect_set);
