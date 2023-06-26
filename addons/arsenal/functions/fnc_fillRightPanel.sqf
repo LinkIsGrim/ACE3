@@ -300,7 +300,7 @@ switch (_ctrlIDC) do {
         {
             // Magazines treated as misc items
             if (_x in _magazineMiscItems) then {
-                ["CfgMagazines", _x, false] call _fnc_fill_right_Container;
+                ["CfgMagazines", _x, true] call _fnc_fill_right_Container;
             } else {
                 ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
             };
@@ -309,7 +309,7 @@ switch (_ctrlIDC) do {
         {
             // Magazines treated as unique items
             if (_x in _magazineMiscItems) then {
-                ["CfgMagazines", _x, false] call _fnc_fill_right_Container;
+                ["CfgMagazines", _x, true] call _fnc_fill_right_Container;
             } else {
                 ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
             };
@@ -332,7 +332,7 @@ switch (_ctrlIDC) do {
             {
                 // Magazines treated as unique items
                 if (_x in _magazineMiscItems) then {
-                    ["CfgMagazines", _x, false] call _fnc_fill_right_Container;
+                    ["CfgMagazines", _x, true] call _fnc_fill_right_Container;
                 } else {
                     ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
                 };
@@ -341,7 +341,7 @@ switch (_ctrlIDC) do {
             {
                 // Magazines treated as unique items
                 if (_x in _magazineMiscItems) then {
-                    ["CfgMagazines", _x, false] call _fnc_fill_right_Container;
+                    ["CfgMagazines", _x, true] call _fnc_fill_right_Container;
                 } else {
                     ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
                 };
