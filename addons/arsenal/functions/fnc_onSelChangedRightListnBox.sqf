@@ -43,7 +43,8 @@ private _container = switch (GVAR(currentLeftPanel)) do {
 [_control, _container, _hasItems] call FUNC(updateRightPanel);
 
 private _item = _control lnbData [_curSel, 0];
-private _cfgEntry = ["CfgWeapons", "CfgMagazines"] select (GVAR(currentRightPanel) in [IDC_buttonMag, IDC_buttonMagALL, IDC_buttonThrow, IDC_buttonPut]);
+private _isMiscMag = _item in (uiNamespace getVariable [QGVAR(magazineMiscItems), createHashMap]);
+private _cfgEntry = ["CfgWeapons", "CfgMagazines"] select (GVAR(currentRightPanel) in [IDC_buttonMag, IDC_buttonMagALL, IDC_buttonThrow, IDC_buttonPut] || _isMiscMag);
 
 // Display item info on the bottom right
 [ctrlParent _control, _control, _curSel, configFile >> _cfgEntry >> _item] call FUNC(itemInfo);

@@ -22,6 +22,7 @@ private _right = _rightSort && {GVAR(currentLeftPanel) in [IDC_buttonUniform, ID
 private _cfgFaces = configFile >> "CfgFaces";
 private _cfgUnitInsignia = configFile >> "CfgUnitInsignia";
 private _cfgUnitInsigniaMission = missionConfigFile >> "CfgUnitInsignia";
+private _cfgMagazines = configFile >> "CfgMagazines";
 
 if (_rightSort) then {
     [
@@ -36,7 +37,7 @@ if (_rightSort) then {
             case IDC_buttonThrow;
             case IDC_buttonPut;
             case IDC_buttonMag;
-            case IDC_buttonMagALL: {configFile >> "CfgMagazines"};
+            case IDC_buttonMagALL: {_cfgMagazines};
             default {configFile >> "CfgWeapons"};
         },
         GVAR(sortListRightPanel) select (
@@ -139,12 +140,19 @@ private _for = if (_right) then {
     for '_i' from 0 to (lbSize _panel) - 1
 };
 
+private _magazineMiscItems = uiNamespace getVariable [QGVAR(magazineMiscItems), createHashMap];
+
 _for do {
     // Get item
     _item = if (_right) then {
         _panel lnbData [_i, 0]
     } else {
         _panel lbData _i
+    };
+
+    // Handle misc magazines
+    if (_item in _magazineMiscItems) then {
+        _cfgClass = _cfgMagazines;
     };
 
     // Get item's count

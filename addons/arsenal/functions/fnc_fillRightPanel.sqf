@@ -159,6 +159,8 @@ if (_leftPanelState && {_ctrlIDC in [RIGHT_PANEL_ACC_IDCS, IDC_buttonCurrentMag,
     _ctrlPanel lbSetValue [_addEmpty, -1];
 };
 
+private _magazineMiscItems = uiNamespace getVariable [QGVAR(magazineMiscItems), createHashMap];
+
 // Fill right panel according to category choice
 switch (_ctrlIDC) do {
     // Optics
@@ -284,54 +286,74 @@ switch (_ctrlIDC) do {
     // Misc. items
     case IDC_buttonMisc: {
         // Don't add items that will be in a custom right panel button
-        private _items = [];
+        private _customButtonItems = [];
 
         if (!isNil QGVAR(customRightPanelButtons)) then {
             {
                 if (!isNil "_x") then {
-                    _items append (_x select 0);
+                    _customButtonItems append (_x select 0);
                 };
             } forEach GVAR(customRightPanelButtons);
         };
 
         // "Regular" misc. items
         {
-            ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
-        } forEach ((GVAR(virtualItems) select IDX_VIRT_MISC_ITEMS) select {!(_x in _items)});
+            // Magazines treated as misc items
+            if (_x in _magazineMiscItems) then {
+                ["CfgMagazines", _x, false] call _fnc_fill_right_Container;
+            } else {
+                ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
+            };
+        } forEach ((GVAR(virtualItems) select IDX_VIRT_MISC_ITEMS) select {!(_x in _customButtonItems)});
         // Unique items
         {
-            ["CfgWeapons", _x, false, true] call _fnc_fill_right_Container;
-        } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_MISC_ITEMS) select {!(_x in _items)});
+            // Magazines treated as unique items
+            if (_x in _magazineMiscItems) then {
+                ["CfgMagazines", _x, false] call _fnc_fill_right_Container;
+            } else {
+                ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
+            };
+        } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_MISC_ITEMS) select {!(_x in _customButtonItems)});
         // Unique backpacks
         {
             ["CfgVehicles", _x, false, true] call _fnc_fill_right_Container;
-        } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_BACKPACKS) select {!(_x in _items)});
+        } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_BACKPACKS) select {!(_x in _customButtonItems)});
         // Unique goggles
         {
             ["CfgGlasses", _x, false, true] call _fnc_fill_right_Container;
-        } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_GOGGLES) select {!(_x in _items)});
+        } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_GOGGLES) select {!(_x in _customButtonItems)});
     };
     // Custom buttons
     default {
-        private _items = (GVAR(customRightPanelButtons) param [[RIGHT_PANEL_CUSTOM_BUTTONS] find _ctrlIDC, []]) param [0, []];
+        private _customButtonItems = (GVAR(customRightPanelButtons) param [[RIGHT_PANEL_CUSTOM_BUTTONS] find _ctrlIDC, []]) param [0, []];
 
-        if (_items isNotEqualTo []) then {
+        if (_customButtonItems isNotEqualTo []) then {
             // "Regular" misc. items
             {
-                ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
-            } forEach ((GVAR(virtualItems) select IDX_VIRT_MISC_ITEMS) select {_x in _items});
+                // Magazines treated as unique items
+                if (_x in _magazineMiscItems) then {
+                    ["CfgMagazines", _x, false] call _fnc_fill_right_Container;
+                } else {
+                    ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
+                };
+            } forEach ((GVAR(virtualItems) select IDX_VIRT_MISC_ITEMS) select {_x in _customButtonItems});
             // Unique items
             {
-                ["CfgWeapons", _x, false, true] call _fnc_fill_right_Container;
-            } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_MISC_ITEMS) select {_x in _items});
+                // Magazines treated as unique items
+                if (_x in _magazineMiscItems) then {
+                    ["CfgMagazines", _x, false] call _fnc_fill_right_Container;
+                } else {
+                    ["CfgWeapons", _x, false] call _fnc_fill_right_Container;
+                };
+            } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_MISC_ITEMS) select {_x in _customButtonItems});
             // Unique backpacks
             {
                 ["CfgVehicles", _x, false, true] call _fnc_fill_right_Container;
-            } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_BACKPACKS) select {_x in _items});
+            } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_BACKPACKS) select {_x in _customButtonItems});
             // Unique goggles
             {
                 ["CfgGlasses", _x, false, true] call _fnc_fill_right_Container;
-            } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_GOGGLES) select {_x in _items});
+            } forEach ((GVAR(virtualItems) select IDX_VIRT_UNIQUE_GOGGLES) select {_x in _customButtonItems});
         };
     };
 };

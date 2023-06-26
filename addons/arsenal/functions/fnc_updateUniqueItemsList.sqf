@@ -31,12 +31,22 @@ private _cfgGlasses = configFile >> "CfgGlasses";
 
 private _isMagazine = false;
 private _isWeapon = false;
+private _magazineMiscItems = uiNamespace getVariable [QGVAR(magazineMiscItems), createHashMap];
 
 {
     _isMagazine = isClass (_cfgMagazines >> _x);
     _isWeapon = isClass (_cfgWeapons >> _x);
+    _isMiscMagazine = _isMagazine && {_x in _magazineMiscItems};
 
     switch (true) do {
+        // Magazine Misc Items (Spare Barrels, Intel)
+        case (
+            _isMiscMagazine &&
+            {!(_x in (GVAR(virtualItems) select IDX_VIRT_MISC_ITEMS))} &&
+            {_x in (_configItems select IDX_VIRT_MISC_ITEMS)}
+        ): {
+            (GVAR(virtualItems) select IDX_VIRT_UNIQUE_MISC_ITEMS) pushBackUnique _x;
+        };
         // Primary, Handgun, Secondary weapon magazines
         case (
             _isMagazine &&

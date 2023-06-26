@@ -14,6 +14,7 @@
 */
 
 private _configItems = EMPTY_VIRTUAL_ARSENAL;
+private _magazineMiscItems = createHashMap;
 
 // https://community.bistudio.com/wiki/Arma_3:_Characters_And_Gear_Encoding_Guide#Character_configuration
 // https://github.com/acemod/ACE3/pull/9040#issuecomment-1597748331
@@ -152,6 +153,11 @@ _putList = _putList - [""];
     _className = configName _x;
 
     switch (true) do {
+        // Unique items are magazines, but should be filtered as misc
+        case ((getNumber (_x >> "ACE_isUnique")) isEqualTo 1): {
+            _magazineMiscItems set [_className, ""];
+            (_configItems select IDX_VIRT_MISC_ITEMS) pushBackUnique _className;
+        };
         // Grenades
         case (_className in _grenadeList): {
             (_configItems select IDX_VIRT_GRENADES) pushBackUnique _className;
@@ -215,6 +221,7 @@ private _insigniaCache = "true" configClasses (configFile >> "CfgUnitInsignia");
 // This contains config case entries only
 uiNamespace setVariable [QGVAR(configItems), _configItems];
 uiNamespace setVariable [QGVAR(configItemsFlat), flatten _configItems];
+uiNamespace setVariable [QGVAR(magazineMiscItems), _magazineMiscItems];
 uiNamespace setVariable [QGVAR(faceCache), _faceCache];
 uiNamespace setVariable [QGVAR(voiceCache), _voiceCache];
 uiNamespace setVariable [QGVAR(insigniaCache), _insigniaCache];

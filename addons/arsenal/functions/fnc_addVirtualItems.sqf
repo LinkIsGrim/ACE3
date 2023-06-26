@@ -71,6 +71,7 @@ if (_items isEqualType true) then {
 
     private _grenadeList = uiNamespace getVariable [QGVAR(grenadeCache), []];
     private _putList = uiNamespace getVariable [QGVAR(putCache), []];
+    private _magazineMiscList = uiNamespace getVariable [QGVAR(magazineMiscItems), createHashMap];
 
     // https://community.bistudio.com/wiki/Arma_3:_Characters_And_Gear_Encoding_Guide#Character_configuration
     // https://github.com/acemod/ACE3/pull/9040#issuecomment-1597748331
@@ -212,6 +213,10 @@ if (_items isEqualType true) then {
                     // Explosives
                     case (_x in _putList): {
                         (_cargo select IDX_VIRT_EXPLOSIVES) pushBackUnique _x;
+                    };
+                    // Magazine Misc Items
+                    case (_x in _magazineMiscList): {
+                        (_cargo select IDX_VIRT_MISC_ITEMS) pushBackUnique _x;
                     };
                     // Primary, handgun & secondary weapon magazines, and magazines that are forced with "ace_arsenal_hide = -1"
                     case (
