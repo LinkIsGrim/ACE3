@@ -1483,5 +1483,8 @@
             <Russian>Сохранить эмблему</Russian>
             <Spanish>Guardar Insignia</Spanish>
         </Key>
+        <Key ID="STR_ACE_Arsenal_statMagCount">
+            <English>Ammo count</English>
+        </Key>
     </Package>
 </Project>

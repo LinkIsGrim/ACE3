@@ -128,4 +128,14 @@ class GVAR(stats) {
         condition = QUOTE(true);
         tabs[] = {{}, {5}};
     };
+    class ACE_magCount: statBase {
+        scope = 2;
+        priority = 1;
+        stats[] = {"count"};
+        displayName = CSTRING(statMagCount);
+        showText = 1;
+        textStatement = QUOTE(call FUNC(statTextStatement_magCount));
+        condition = QUOTE(!(getNumber (_this select 1 >> 'ACE_isUnique') isEqualTo 1));
+        tabs[] = {{}, {4}};
+    };
 };
