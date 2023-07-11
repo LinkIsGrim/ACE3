@@ -2,7 +2,7 @@ class EGVAR(arsenal,stats) {
     class statBase;
     class GVAR(entrenchingTool): statBase {
         scope = 2;
-        priority = -1;
+        priority = 1; // sort this above mass
         stats[] = {QGVAR(entrenchingTool)};
         displayName = CSTRING(EntrenchingToolName);
         showText = 1;
