@@ -25,6 +25,7 @@ class EGVAR(arsenal,stats) {
         displayName = "$STR_dn_ammo";
         showText = 1;
         textStatement = QUOTE(params [ARR_2('_stat', '_config')]; private _ammoDisplayName = getText (configFile >> 'CfgAmmo' >> (getText (_config >> 'ammo')) >> _stat select 1); [ARR_2(_ammoDisplayName, getText (_config >> _stat select 0))] select (_ammoDisplayName == ''));
+        condition = QUOTE(getNumber (_this select 1 >> 'ACE_isUnique') isNotEqualTo 1 && {getText (_this select 1 >> 'ammo') isNotEqualTo ''});
         tabs[] = {{}, {4}};
     };
     class ACE_ballisticCoef: statBase {
