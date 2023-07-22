@@ -14,6 +14,7 @@
 params ["_unit"];
 
 private _vehicle = objectParent _unit;
+if (isNull _vehicle) exitWith {};
 TRACE_3("lockUnconsciousSeat",_unit,_vehicle,lifeState _unit);
 
 if (alive _unit && {lifeState _unit != "INCAPACITATED"}) exitWith {};

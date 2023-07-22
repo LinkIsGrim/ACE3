@@ -86,7 +86,7 @@
 ["ace_unconscious", {
     params ["_unit", "_unconscious"];
 
-    if (vehicle _unit != _unit && {local vehicle _unit}) then {
+    if (!isNull objectParent _unit && {local objectParent _unit}) then {
         if (_unconscious) then {
             [_unit] call FUNC(lockUnconsciousSeat);
         } else {
@@ -97,5 +97,7 @@
 
 ["CAManBase", "Killed", {
     params ["_unit"];
-    [_unit] call FUNC(unlockUnconsciousSeat);
+    if (!isNull objectParent _unit && {local objectParent _unit}) exitWith {
+        [_unit] call FUNC(lockUnconsciousSeat);
+    };
 }] call CBA_fnc_addClassEventHandler;
