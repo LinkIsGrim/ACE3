@@ -41,7 +41,6 @@ if (!(ctrlShown _searchbarCtrl) || {ctrlFade _searchbarCtrl > 0}) then {
 
 private _cfgMagazines = configFile >> "CfgMagazines";
 private _cfgWeapons = configFile >> "CfgWeapons";
-private _rightPanelCache = uiNamespace getVariable QGVAR(rightPanelCache);
 
 private _fnc_fillRightContainer = {
     params ["_configCategory", "_className", "_hasItemInfo", ["_isUnique", false, [false]], ["_unknownOrigin", false, [false]]];
@@ -52,7 +51,7 @@ private _fnc_fillRightContainer = {
     };
 
     // If not in cache, find info and cache it for later use
-    (_rightPanelCache getOrDefaultCall [_configCategory + _className, {
+    (GVAR(rightPanelCache) getOrDefaultCall [_configCategory + _className, {
         // Get display name, picture and mass
         private _configPath = configFile >> _configCategory >> _className;
 
@@ -88,7 +87,7 @@ private _fnc_fillRightContainer = {
             _mass
         };
 
-        _rightPanelCache set [_className, _mass]; // Needed because this provides more accurate weight for FUNC(updateRightPanel)
+        GVAR(rightPanelCache) set [_className, _mass]; // Needed because this provides more accurate weight for FUNC(updateRightPanel)
 
         [getText (_configPath >> "displayName"), getText (_configPath >> "picture"), _mass]
     }, true]) params ["_displayName", "_picture", "_mass"];

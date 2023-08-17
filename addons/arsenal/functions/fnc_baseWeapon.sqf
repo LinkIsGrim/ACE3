@@ -19,7 +19,8 @@
 params [["_weapon", "", [""]]];
 
 // Check if item is cached
-(uiNamespace getVariable QGVAR(baseWeaponNameCache)) getOrDefaultCall [toLower _weapon, {
+private _cache = uiNamespace getVariable QGVAR(baseWeaponNameCache);
+_cache getOrDefaultCall [toLower _weapon, {
     private _cfgWeapons = configfile >> "CfgWeapons";
     private _config = _cfgWeapons >> _weapon;
 
@@ -49,4 +50,4 @@ params [["_weapon", "", [""]]];
             _className
         };
     };
-}, true]
+}, !isFinal _cache]

@@ -11,6 +11,11 @@ PREP_RECOMPILE_END;
 
 #include "initSettings.sqf"
 
+// Caches for names, pictures, mod icons
+GVAR(addListBoxItemCache) = createHashMap;
+GVAR(rightPanelCache) = createHashMap;
+GVAR(sortCache) = createHashMap;
+
 // Arsenal events
 [QGVAR(statsToggle), {
     params ["_display", "_showStats"];

@@ -3,11 +3,9 @@
 #include "XEH_PREP.hpp"
 
 // Cache for FUNC(baseWeapon)
-uiNamespace setVariable [QGVAR(baseWeaponNameCache), createHashMap];
-
-// Caches for names, pictures, mod icons
-uiNamespace setVariable [QGVAR(addListBoxItemCache), createHashMap];
-uiNamespace setVariable [QGVAR(rightPanelCache), createHashMap];
-uiNamespace setVariable [QGVAR(sortCache), createHashMap];
+private _baseWeaponCache = createHashMap;
+uiNamespace setVariable [QGVAR(baseWeaponNameCache), _baseWeaponCache];
 
 call FUNC(scanConfig);
+
+uiNamespace setVariable [QGVAR(baseWeaponNameCache), compileFinal _baseWeaponCache];

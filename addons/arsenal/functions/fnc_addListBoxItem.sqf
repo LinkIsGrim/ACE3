@@ -21,7 +21,7 @@
 params ["_configCategory", "_className", "_ctrlPanel", ["_pictureEntryName", "picture", [""]]];
 
 // Sanitise key, as it's public; If not in cache, find info and cache it for later use
-((uiNamespace getVariable QGVAR(addListBoxItemCache)) getOrDefaultCall [_configCategory + _className, {
+(GVAR(addListBoxItemCache) getOrDefaultCall [_configCategory + _className, {
     // Get classname (config case), display name, picture and DLC
     private _configPath = configFile >> _configCategory >> _className;
     private _dlcName = _configPath call EFUNC(common,getAddon);

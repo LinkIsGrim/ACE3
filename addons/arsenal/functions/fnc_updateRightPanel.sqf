@@ -18,14 +18,13 @@
 params ["_control", "_container", "_hasItems"];
 
 private _loadRemaining = maxLoad _container - loadAbs _container;
-private _rightPanelCache = uiNamespace getVariable [QGVAR(rightPanelCache), createHashMap];
 
 private _mass = -1;
 private _color = [];
 
 // Grey out items that are too big to fit in remaining space of the container
 for "_row" from 0 to (lnbSize _control select 0) - 1 do {
-    _mass = _rightPanelCache getOrDefault [_control lnbData [_row, 0], 0];
+    _mass = GVAR(rightPanelCache) getOrDefault [_control lnbData [_row, 0], 0];
 
     // Lower alpha on color for items that can't fit
     _color = [1, 1, 1, [0.25, 1] select (_mass <= _loadRemaining)];
@@ -52,6 +51,6 @@ private _curSel = lnbCurSelRow _control;
 // Disable '+' button if item is unique or too big to fit in remaining space
 if (_curSel != -1) then {
     private _plusButtonCtrl = _display displayCtrl IDC_arrowPlus;
-    _plusButtonCtrl ctrlEnable !((_control lnbValue [_curSel, 2]) == 1 || {(_rightPanelCache getOrDefault [_control lnbData [_curSel, 0], 0]) > _loadRemaining});
+    _plusButtonCtrl ctrlEnable !((_control lnbValue [_curSel, 2]) == 1 || {(GVAR(rightPanelCache) getOrDefault [_control lnbData [_curSel, 0], 0]) > _loadRemaining});
     _plusButtonCtrl ctrlCommit FADE_DELAY;
 };

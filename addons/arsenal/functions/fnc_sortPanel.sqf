@@ -135,7 +135,6 @@ private _name = "";
 private _fillerChar = toString [1];
 
 private _magazineMiscItems = uiNamespace getVariable QGVAR(magazineMiscItems);
-private _sortCache = uiNamespace getVariable QGVAR(sortCache);
 
 private _faceCache = if (_cfgClass == _cfgFaces) then {
     uiNamespace getVariable [QGVAR(faceCache), createHashMap]
@@ -200,7 +199,7 @@ _for do {
     };
 
     // Value can be any type
-    _value = _sortCache getOrDefaultCall [format ["%1_%2_%3", _sortName, _item, _quantity], {
+    _value = GVAR(sortCache) getOrDefaultCall [format ["%1_%2_%3", _sortName, _item, _quantity], {
         private _value = [_itemCfg, _item, _quantity] call _statement;
 
         // If number, convert to string (keep 2 decimal after comma; Needed for correct weight sorting)
