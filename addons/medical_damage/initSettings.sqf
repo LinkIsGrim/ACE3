@@ -51,3 +51,12 @@
     [0, 1, 1, 2, true],
     true
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(hitPointSpreadEffect),
+    "SLIDER",
+    [LSTRING(hitPointSpreadEffect_DisplayName), LSTRING(hitPointSpreadEffect_Description)],
+    ELSTRING(medical,Category),
+    [0, 1, 1, 2, true],
+    true
+] call CBA_fnc_addSetting;

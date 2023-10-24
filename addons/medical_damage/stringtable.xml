@@ -817,5 +817,11 @@
             <Chinesesimp>死于致命伤的概率。</Chinesesimp>
             <Korean>치명상으로 인해 사망할 확률을 정합니다.</Korean>
         </Key>
+        <Key ID="STR_ACE_Medical_Damage_HitPointSpreadEffect_DisplayName">
+            <English>HitPoint Spread Effect</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_HitPointSpreadEffect_Description">
+            <English>Effect of damage that would be transferred to other hitpoints on final damage for selection-specific damage. Only touch this if you know what you're doing!\nUse 0% for pre-3.16.1 behavior.</English>
+        </Key>
     </Package>
 </Project>

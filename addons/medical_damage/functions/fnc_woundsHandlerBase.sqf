@@ -1,3 +1,4 @@
+#define DEBUG_MODE_FULL
 #include "..\script_component.hpp"
 /*
  * Author: Glowbal, commy2
@@ -37,6 +38,12 @@ private _painLevel = 0;
 private _criticalDamage = false;
 private _bodyPartDamage = _unit getVariable [QEGVAR(medical,bodyPartDamage), [0,0,0,0,0,0]];
 private _bodyPartVisParams = [_unit, false, false, false, false]; // params array for EFUNC(medical_engine,updateBodyPartVisuals);
+
+if (_selectionSpecific > 0 && {count _allDamages > 1}) then {
+    private _damageSum = vectorMagnitude (_allDamages apply {_x select 0});
+    private _damageCoef = linearConversion [0, 1, GVAR(hitPointSpreadEffect), 1, _damageSum/(_allDamages select 0 select 0)];
+    (_allDamages select 0) set [0, _damageSum];
+};
 
 // process wounds separately for each body part hit
 {   // forEach _allDamages
