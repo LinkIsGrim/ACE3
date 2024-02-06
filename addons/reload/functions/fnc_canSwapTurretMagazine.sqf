@@ -23,9 +23,10 @@ private _turretPath = _vehicle unitTurret _unit;
 if (_turretPath in [[-1], []]) exitWith {false}; // skip driver / cargo
 if !(_vehicle turretLocal _turretPath) exitWith {false}; // just to be safe
 
-(weaponState [_vehicle, _turretPath]) params ["_weapon", "_muzzle", "", "_magazine", "_ammoCount"];
+(weaponState [_vehicle, _turretPath]) params ["_weapon", "_muzzle", "", "_magazine", "_ammoCount", "_roundReloadPhase", "_magazineReloadPhase"];
 TRACE_5("",_weapon,_muzzle,_magazine,_ammoCount,typeOf _vehicle);
 
+if (_roundReloadPhase + _magazineReloadPhase != 0) exitWith {false}; // can't reload while already reloading
 if ((_weapon == "") || {_weapon != _muzzle}) exitWith {false}; // skip multi-muzzle (he/ap auto-cannons)
 if (_magazine == "") exitWith {false};
 if (isText (configFile >> "CfgMagazines" >> _magazine >> "pylonWeapon")) exitWith {false};
