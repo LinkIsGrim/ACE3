@@ -19,22 +19,4 @@
 
 params ["_unit", "_itemType"];
 
-private _countItemsInContainer = {
-    params ["_itemType", "_container"];
-
-    if (isClass (configFile >> "CfgMagazines" >> _itemType)) then {
-        (getMagazineCargo _container) params ["_itemTypes", "_itemCounts"];
-
-        private _index = _itemTypes find _itemType;
-        _itemCounts param [_index, 0]
-    } else {
-        (getItemCargo _container) params ["_itemTypes", "_itemCounts"];
-
-        private _index = _itemTypes find _itemType;
-        _itemCounts param [_index, 0]
-    };
-};
-
-([_itemType, uniformContainer _unit] call _countItemsInContainer) +
-([_itemType, vestContainer _unit] call _countItemsInContainer) +
-([_itemType, backpackContainer _unit] call _countItemsInContainer)
+[_unit, 0, 3, 3, 3, false] call FUNC(uniqueUnitItems) getOrDefault [_itemType, 0] // return
