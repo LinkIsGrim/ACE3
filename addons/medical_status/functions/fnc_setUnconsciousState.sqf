@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 /*
  * Author: Glowbal
  * Sets a unit in the unconscious state.
@@ -45,7 +45,12 @@ if (_active) then {
         while {dialog} do {
             closeDialog 0;
         };
+
+        if (EGVAR(medical,dropWeaponUnconsciousChance) != 0 && {random 1 <= EGVAR(medical,dropWeaponUnconsciousChance)}) then {
+            _unit call EFUNC(common,throwWeapon);
+        };
     };
+
     // Unlock controls for copilot if unit is pilot of aircraft
     if (vehicle _unit isKindOf "Air" && {_unit == driver vehicle _unit}) then {
         TRACE_1("pilot of air vehicle - unlocking controls",vehicle _unit);
@@ -53,18 +58,17 @@ if (_active) then {
         _unit action ["UnlockVehicleControl", vehicle _unit];
     };
 
-    // Disable AI aiming
-    if (!isPlayer _unit && {_unit checkAIFeature "WEAPONAIM"}) then {
-        _unit disableAI "WEAPONAIM";
-        _unit setVariable [QGVAR(reenableWeaponAim), true, true];
+    // Disable AI talking (yes, this needs to be explicit)
+    if (!isPlayer _unit && {_unit checkAIFeature "RADIOPROTOCOL"}) then {
+        _unit disableAI "RADIOPROTOCOL";
+        _unit setVariable [QGVAR(reenableRadioProtocol), true, true];
     };
 } else {
     // Unit has woken up, no longer need to track this
     _unit setVariable [QEGVAR(medical,lastWakeUpCheck), nil];
 
-    // Reenable AI aiming
-    if (_unit getVariable [QGVAR(reenableWeaponAim), false]) then {
-        _unit enableAI "WEAPONAIM";
+    if (_unit getVariable [QGVAR(reenableRadioProtocol), false]) then {
+        _unit enableAI "RADIOPROTOCOL";
     };
 };
 

@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 /*
  * Author: Alganthe, johnb43
  * Create the internal stat arrays when needed for the first time.
@@ -101,7 +101,7 @@ private _priority = 0;
         (_finalArray select 4) set [1, compile (getText (_x >> "textStatement"))];
     };
 
-    TRACE_3("stats array", _finalArray, _leftTabsList, _rightTabsList);
+    TRACE_3("stats array",_finalArray,_leftTabsList,_rightTabsList);
 
     if (_leftTabsList isNotEqualTo []) then {
         [_statsListLeftPanel, _leftTabsList, "L"] call _fnc_addToTabs;

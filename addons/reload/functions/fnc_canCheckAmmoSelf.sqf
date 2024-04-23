@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 /*
  * Author: veteran29
  * Check if the player can check his own ammo.
@@ -17,4 +17,4 @@
 
 params ["_player"];
 
-_player call CBA_fnc_canUseWeapon && {!((vehicle _player) isKindOf "StaticWeapon")}
+_player call CBA_fnc_canUseWeapon && {currentWeapon _player != ""} && {!((vehicle _player) isKindOf "StaticWeapon")}
